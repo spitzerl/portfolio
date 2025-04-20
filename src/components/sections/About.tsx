@@ -3,12 +3,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
-const skills = {
-  "Langages et frameworks": ["HTML5", "CSS3", "JavaScript", "PHP", "SQL", "Bootstrap", "WordPress"],
-  "Outils": ["Visual Studio Code", "Visual Studio", "Git", "GitHub", "DevOps", "phpMyAdmin", "JetBrains"],
-  "Soft Skills": ["Travail en équipe", "Autonomie", "Adaptabilité", "Curiosité", "Créativité", "Organisation", "Communication"]
-}
-
 export function About() {
   return (
     <section id="about" className="py-16 sm:py-24 px-4">
