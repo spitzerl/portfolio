@@ -19,13 +19,13 @@ export function About() {
             <CardContent className="p-4 sm:p-6">
               <h3 className="text-xl sm:text-2xl font-bold mb-4">Parcours</h3>
               <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                Étudiant en BTS SIO SLAM, je passionné par l'informatique et le développement web. J'ai acquis des compétences solides dans le développement d'applications web et mobiles modernes grâce à mon parcours et ma motivation.
+                Étudiant en BTS SIO SLAM, je suis passionné par l&apos;informatique et le développement web. J&apos;ai acquis des compétences solides dans le développement d&apos;applications web et mobiles modernes grâce à mon parcours et ma motivation.
               </p>
               <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                Aimant explorer ce domaine à la recherche des dernières évolutions, j'ai pour souhait de faciliter la vie des utilisateurs en proposant des logiciels fonctionnels et performants.
+                Aimant explorer ce domaine à la recherche des dernières évolutions, j&apos;ai pour souhait de faciliter la vie des utilisateurs en proposant des logiciels fonctionnels et performants.
               </p>
               <p className="text-sm sm:text-base text-muted-foreground">
-                Mon objectif est de continuer à apprendre et à m'améliorer dans ce domaine en constante évolution.
+                Mon objectif est de continuer à apprendre et à m&apos;améliorer dans ce domaine en constante évolution.
               </p>
             </CardContent>
           </Card>
