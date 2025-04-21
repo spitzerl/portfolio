@@ -43,20 +43,20 @@ export function Hero() {
     <section id="home" className="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-16">
       <div className="absolute inset-0 overflow-hidden">
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] sm:w-[500px] sm:h-[300px] md:w-[700px] md:h-[500px] rounded-[40%_60%] bg-gradient-to-r from-amber-400/15 via-orange-400/15 to-yellow-400/15 blur-[50px] sm:blur-[75px] md:blur-[100px] animate-gradient transition-transform duration-300 ease-out"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] sm:w-[500px] sm:h-[300px] md:w-[700px] md:h-[500px] rounded-[40%_60%] bg-gradient-to-r from-amber-400/30 via-orange-400/30 to-pink-400/30 dark:from-amber-400/15 dark:via-orange-400/15 dark:to-pink-400/15 blur-[50px] sm:blur-[75px] md:blur-[100px] animate-gradient transition-transform duration-300 ease-out"
           style={{ 
             transform: `translate(${mousePosition.x}px, ${mousePosition.y + scrollPosition}px) rotate(15deg)`,
           }}
         />
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[150px] sm:w-[400px] sm:h-[250px] md:w-[600px] md:h-[400px] rounded-[60%_40%] bg-gradient-to-r from-yellow-400/15 via-amber-400/15 to-orange-400/15 blur-[50px] sm:blur-[75px] md:blur-[100px] animate-gradient transition-transform duration-300 ease-out"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[150px] sm:w-[400px] sm:h-[250px] md:w-[600px] md:h-[400px] rounded-[60%_40%] bg-gradient-to-r from-yellow-400/30 via-pink-400/30 to-amber-400/30 dark:from-yellow-400/15 dark:via-pink-400/15 dark:to-amber-400/15 blur-[50px] sm:blur-[75px] md:blur-[100px] animate-gradient transition-transform duration-300 ease-out"
           style={{ 
             transform: `translate(${-mousePosition.x * 0.7}px, ${-mousePosition.y * 0.7 + scrollPosition * 0.5}px) rotate(-15deg)`,
             animationDelay: '-7s',
           }}
         />
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] sm:w-[300px] sm:h-[200px] md:w-[500px] md:h-[300px] rounded-[45%_55%] bg-gradient-to-r from-orange-400/15 via-yellow-400/15 to-amber-400/15 blur-[50px] sm:blur-[75px] md:blur-[100px] animate-gradient transition-transform duration-300 ease-out"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] sm:w-[300px] sm:h-[200px] md:w-[500px] md:h-[300px] rounded-[45%_55%] bg-gradient-to-r from-orange-400/30 via-pink-400/30 to-yellow-400/30 dark:from-orange-400/15 dark:via-pink-400/15 dark:to-yellow-400/15 blur-[50px] sm:blur-[75px] md:blur-[100px] animate-gradient transition-transform duration-300 ease-out"
           style={{ 
             transform: `translate(${mousePosition.x * 0.4}px, ${mousePosition.y * 0.4 + scrollPosition * 0.3}px) rotate(5deg)`,
             animationDelay: '-14s',
