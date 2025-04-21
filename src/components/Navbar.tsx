@@ -58,15 +58,15 @@ export function Navbar() {
                 <NavigationMenuItem key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                    className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
                       activeSection === item.id
-                        ? "text-primary"
-                        : "text-muted-foreground"
+                        ? "text-primary font-medium"
+                        : "text-muted-foreground hover:text-primary"
                     }`}
                   >
                     {item.label}
                     {activeSection === item.id && (
-                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300" />
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary/70 rounded-full transform origin-left transition-transform duration-300" />
                     )}
                   </a>
                 </NavigationMenuItem>
@@ -75,16 +75,6 @@ export function Navbar() {
           </NavigationMenu>
 
           <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-4">
-              <Button variant="ghost" size="sm" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </Button>
-              <Button size="sm" asChild>
-                <a href="#contact">Me Contacter</a>
-              </Button>
-            </div>
             <ThemeToggle />
             <Button
               variant="ghost"
@@ -104,9 +94,9 @@ export function Navbar() {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`block px-3 py-2 text-base font-medium rounded-md ${
+                className={`block px-3 py-2 text-base font-medium rounded-md transition-all duration-300 ${
                   activeSection === item.id
-                    ? "text-primary bg-accent"
+                    ? "text-primary bg-accent/50 border-l-2 border-primary/70"
                     : "text-muted-foreground hover:text-primary hover:bg-accent/50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -114,16 +104,6 @@ export function Navbar() {
                 {item.label}
               </a>
             ))}
-            <div className="pt-4 space-y-2">
-              <Button variant="ghost" size="sm" className="w-full justify-start" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </Button>
-              <Button size="sm" className="w-full justify-start" asChild>
-                <a href="#contact">Me Contacter</a>
-              </Button>
-            </div>
           </div>
         </div>
       </div>
