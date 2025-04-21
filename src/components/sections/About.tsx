@@ -2,6 +2,61 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
+
+interface SkillBadgeProps {
+  name: string
+  iconPath: string
+}
+
+function SkillBadge({ name, iconPath }: SkillBadgeProps) {
+  return (
+    <Badge variant="secondary" className="text-xs sm:text-sm flex items-center gap-1">
+      <Image 
+        src={iconPath} 
+        alt={`${name} icon`} 
+        width={16} 
+        height={16} 
+        className="w-4 h-4"
+      />
+      {name}
+    </Badge>
+  )
+}
+
+const skills = {
+  languages: [
+    { name: "HTML", iconPath: "/devicons/html5/html5-original.svg" },
+    { name: "CSS", iconPath: "/devicons/css3/css3-original.svg" },
+    { name: "JavaScript", iconPath: "/devicons/javascript/javascript-original.svg" },
+    { name: "TypeScript", iconPath: "/devicons/typescript/typescript-original.svg" },
+    { name: "PHP", iconPath: "/devicons/php/php-original.svg" },
+    { name: "SQL", iconPath: "/devicons/mysql/mysql-original.svg" },
+    { name: "C#", iconPath: "/devicons/csharp/csharp-original.svg" },
+    { name: "Java", iconPath: "/devicons/java/java-original.svg" },
+  ],
+  frameworks: [
+    { name: "VueJS", iconPath: "/devicons/vuejs/vuejs-original.svg" },
+    { name: "React", iconPath: "/devicons/react/react-original.svg" },
+    { name: "Next.js", iconPath: "/devicons/nextjs/nextjs-original.svg" },
+    { name: "Symfony", iconPath: "/devicons/symfony/symfony-original.svg" },
+    { name: "CodeIgniter", iconPath: "/devicons/codeigniter/codeigniter-plain.svg" },
+    { name: "PlayWright", iconPath: "/devicons/playwright/playwright-original.svg" },
+    { name: "dotNET", iconPath: "/devicons/dotnetcore/dotnetcore-original.svg" },
+  ],
+  tools: [
+    { name: "Git", iconPath: "/devicons/git/git-original.svg" },
+    { name: "GitHub", iconPath: "/devicons/github/github-original.svg" },
+    { name: "Azure", iconPath: "/devicons/azure/azure-original.svg" },
+    { name: "Docker", iconPath: "/devicons/docker/docker-original.svg" },
+    { name: "Linux", iconPath: "/devicons/linux/linux-original.svg" },
+  ],
+  projectManagement: [
+    { name: "Jira", iconPath: "/devicons/jira/jira-original.svg" },
+    { name: "Trello", iconPath: "/devicons/trello/trello-plain.svg" },
+    { name: "Confluence", iconPath: "/devicons/confluence/confluence-original.svg" },
+  ],
+}
 
 export function About() {
   return (
@@ -29,8 +84,8 @@ export function About() {
                 <div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Langages de programmation</h3>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {["HTML", "CSS", "JavaScript", "TypeScript", "PHP", "SQL", "C#", "Java"].map((lang) => (
-                      <Badge key={lang} variant="secondary" className="text-xs sm:text-sm">{lang}</Badge>
+                    {skills.languages.map((skill) => (
+                      <SkillBadge key={skill.name} {...skill} />
                     ))}
                   </div>
                 </div>
@@ -38,8 +93,8 @@ export function About() {
                 <div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Frameworks</h3>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {["VueJS", "React", "Symfony", "CodeIgniter", "PlayWright", "dotNET"].map((framework) => (
-                      <Badge key={framework} variant="secondary" className="text-xs sm:text-sm">{framework}</Badge>
+                    {skills.frameworks.map((skill) => (
+                      <SkillBadge key={skill.name} {...skill} />
                     ))}
                   </div>
                 </div>
@@ -47,8 +102,8 @@ export function About() {
                 <div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Outils de développement</h3>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {["Git", "GitHub", "Azure", "Docker", "Linux"].map((tool) => (
-                      <Badge key={tool} variant="secondary" className="text-xs sm:text-sm">{tool}</Badge>
+                    {skills.tools.map((skill) => (
+                      <SkillBadge key={skill.name} {...skill} />
                     ))}
                   </div>
                 </div>
@@ -56,8 +111,8 @@ export function About() {
                 <div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Gestion de projet</h3>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {["Jira", "Trello", "Confluence", "Teams"].map((tool) => (
-                      <Badge key={tool} variant="secondary" className="text-xs sm:text-sm">{tool}</Badge>
+                    {skills.projectManagement.map((skill) => (
+                      <SkillBadge key={skill.name} {...skill} />
                     ))}
                   </div>
                 </div>
