@@ -17,27 +17,39 @@ export function Navbar() {
       setScrolled(window.scrollY > 50)
 
       // Update active section based on scroll position
-      const sections = ["home", "about", "projects", "contact"]
+      const sections = ["home", "about", "experience", "education", "projects", "contact"]
+      const navbarHeight = 64 // Height of the navbar (h-16 = 4rem = 64px)
+      const offset = navbarHeight + 20 // Add some padding for better detection
+
       const currentSection = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          const sectionTop = rect.top + window.scrollY
+          const sectionBottom = sectionTop + rect.height
+          const scrollPosition = window.scrollY + offset
+
+          return scrollPosition >= sectionTop && scrollPosition < sectionBottom
         }
         return false
       })
+
       if (currentSection) {
         setActiveSection(currentSection)
       }
     }
 
     window.addEventListener("scroll", handleScroll)
+    // Call handleScroll once on mount to set initial active section
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   const navItems = [
     { id: "home", label: "Lucas Spitzer" },
     { id: "about", label: "À Propos" },
+    { id: "education", label: "Formation" },
+    { id: "experience", label: "Expérience" },
     { id: "projects", label: "Projets" },
     { id: "contact", label: "Contact" }
   ]
