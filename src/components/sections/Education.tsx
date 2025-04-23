@@ -1,6 +1,8 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { GraduationCap } from "lucide-react"
 
 const formations = [
   {
@@ -13,11 +15,15 @@ const formations = [
     period: "2023 - 2025",
     title: "BTS SIO SLAM",
     school: "Lycée CCI Gard, Nîmes",
+    isUpcoming: false,
+    isCurrent: true,
   },
   {
     period: "2020 - 2023",
     title: "Baccalauréat STI2D SIN",
     school: "Lycée LaSalle, Alès",
+    isUpcoming: false,
+    isCurrent: false,
   }
 ]
 
@@ -26,23 +32,60 @@ export function Education() {
     <section id="education" className="py-16 sm:py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Formation</h2>
-        <div className="grid gap-4 sm:gap-6 max-w-3xl mx-auto">
-          {formations.map((formation, index) => (
-            <Card key={index}>
-              <CardContent className="p-4 sm:p-6">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-0">
-                  <div>
-                    <h4 className="text-lg sm:text-xl font-semibold">{formation.title}</h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">{formation.school}</p>
-                  </div>
-                  <span className={`text-xs sm:text-sm ${formation.isUpcoming ? 'bg-blue-100 text-blue-800 px-2 py-1 rounded-full' : 'text-muted-foreground'}`}>
-                    {formation.period}
-                  </span>
+        <div className="max-w-4xl mx-auto relative">
+          {/* Ligne verticale de progression avec effet de dégradé */}
+          <div className="absolute left-4 sm:left-1/2 top-[5%] bottom-[5%] w-px -translate-x-1/2">
+            {/* Ligne principale */}
+            <div className="absolute inset-0 border-l-2 border-dashed border-border" />
+            {/* Dégradé haut */}
+            <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-background to-transparent" />
+            {/* Dégradé bas */}
+            <div className="absolute bottom-0 h-12 w-full bg-gradient-to-t from-background to-transparent" />
+          </div>
+
+          <div className="space-y-12">
+            {formations.map((formation, index) => (
+              <div key={index} className="relative">
+                {/* Point de progression avec ombre */}
+                <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 -translate-y-1/2 top-[50%]">
+                  <div className={`w-3 h-3 rounded-full shadow-sm ${
+                    formation.isCurrent 
+                      ? "bg-primary shadow-primary/20" 
+                      : formation.isUpcoming 
+                        ? "border border-border" 
+                        : "border border-primary"
+                  }`} />
                 </div>
-                {/*   <p className="text-muted-foreground">{formation.description}</p> */}
-              </CardContent>
-            </Card>
-          ))}
+
+                {/* Carte */}
+                <div className={`ml-12 sm:ml-0 ${index % 2 === 0 ? 'sm:mr-[50%] sm:pr-16' : 'sm:ml-[50%] sm:pl-16'}`}>
+                  <Card className={`transition-colors ${
+                    formation.isUpcoming ? "opacity-50" : ""
+                  }`}>
+                    <CardContent className="p-4">
+                      <div className="space-y-3">
+                        <div>
+                          <div className="flex items-baseline justify-between gap-4">
+                            <h3 className="font-semibold text-lg">{formation.title}</h3>
+                            <Badge 
+                              variant={formation.isCurrent ? "default" : "secondary"}
+                              className="whitespace-nowrap text-xs"
+                            >
+                              {formation.period}
+                            </Badge>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-sm text-muted-foreground mt-1">
+                            <GraduationCap className="w-4 h-4 shrink-0" />
+                            <span>{formation.school}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

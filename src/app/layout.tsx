@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Lucas Spitzer" }],
   creator: "Lucas Spitzer",
   publisher: "Lucas Spitzer",
+  icons: {
+    icon: '/favicon.ico',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -48,11 +51,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <head>
-        <link rel="icon" type="image/png" href="/my-notion-face-transparent.png" />
-        <link rel="apple-touch-icon" href="/my-notion-face-transparent.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

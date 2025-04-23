@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { Menu, X, Github, Linkedin } from "lucide-react"
+import { CVDownloadButton } from "@/components/ui/CVDownloadButton"
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -96,6 +97,7 @@ export function Navbar() {
           </NavigationMenu>
 
           <div className="flex items-center gap-4">
+            <CVDownloadButton />
             <a
               href="https://github.com/spitzerl"
               target="_blank"
