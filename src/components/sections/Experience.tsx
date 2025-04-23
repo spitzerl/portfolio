@@ -1,21 +1,43 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Building2, Calendar } from "lucide-react"
 
 const experiences = [
   {
     period: "Janvier 2025 - Février 2025",
     title: "Testeur Q&A",
-    company: "PeopleSpheres, Montpellier",
-    description: "Développement de tests automatisés pour une application de SIRH"
+    company: "PeopleSpheres",
+    location: "Montpellier",
+    description: "Développement de tests automatisés pour une application de SIRH",
+    contractType: "stage"
   },
   {
     period: "Mai 2024 - Juin 2024",
     title: "Développeur Full Stack",
-    company: "Institut d'Électronique des Systèmes, Montpellier",
-    description: "Développement, déploiement et configuration de solution embarquées"
+    company: "Institut d'Électronique des Systèmes",
+    location: "Montpellier",
+    description: "Développement, déploiement et configuration de solution embarquées",
+    contractType: "stage"
   },
 ]
+
+// Fonction pour obtenir le label du type de contrat
+const getContractLabel = (type: string) => {
+  switch (type) {
+    case "stage":
+      return "Stage"
+    case "alternance":
+      return "Alternance"
+    case "cdi":
+      return "CDI"
+    case "cdd":
+      return "CDD"
+    default:
+      return type
+  }
+}
 
 export function Experience() {
   return (
@@ -24,16 +46,29 @@ export function Experience() {
         <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Expérience</h2>
         <div className="grid gap-4 sm:gap-6 max-w-3xl mx-auto">
           {experiences.map((exp, index) => (
-            <Card key={index}>
-              <CardContent className="p-4 sm:p-6">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-0 mb-2">
-                  <div>
-                    <h4 className="text-lg sm:text-xl font-semibold">{exp.title}</h4>
-                    <p className="text-sm sm:text-base text-muted-foreground">{exp.company}</p>
+            <Card key={index} className="bg-card hover:bg-accent/5 transition-colors">
+              <CardContent className="p-4">
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg">{exp.title}</h3>
+                      <div className="flex items-center gap-1.5 text-muted-foreground mt-1">
+                        <Building2 className="w-3.5 h-3.5" />
+                        <span className="text-sm">{exp.company}</span>
+                        <span className="text-sm text-muted-foreground/60">•</span>
+                        <span className="text-sm">{exp.location}</span>
+                      </div>
+                    </div>
+                    <Badge variant="secondary" className="h-fit shrink-0">
+                      {getContractLabel(exp.contractType)}
+                    </Badge>
                   </div>
-                  <span className="text-xs sm:text-sm text-muted-foreground">{exp.period}</span>
+                  <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>{exp.period}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{exp.description}</p>
                 </div>
-                <p className="text-sm sm:text-base text-muted-foreground">{exp.description}</p>
               </CardContent>
             </Card>
           ))}
