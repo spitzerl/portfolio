@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Pin, Github, Globe } from "lucide-react"
+import { Pin, ExternalLink } from "lucide-react"
 
 const projects = [
   {
