@@ -11,7 +11,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { useState } from "react"
 
 const projects = [
   {
@@ -97,8 +96,6 @@ const projects = [
 ]
 
 export function Projects() {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null)
-
   // Trier les projets : d'abord les épinglés, puis par année décroissante
   const sortedProjects = [...projects].sort((a, b) => {
     if (a.pinned !== b.pinned) {
