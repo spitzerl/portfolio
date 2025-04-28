@@ -9,8 +9,6 @@ export default function VeillePage() {
         </h1>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
           Découvrez les évolutions majeures des technologies web depuis septembre 2023.
-          Cette frise chronologique présente les innovations et mises à jour importantes
-          qui façonnent l&apos;avenir du développement web.
         </p>
         <Timeline />
       </div>
