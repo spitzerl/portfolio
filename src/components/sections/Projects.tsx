@@ -21,7 +21,8 @@ const projects = [
     githubLink: "",
     year: "2025",
     type: "Personnel",
-    pinned: true
+    pinned: true,
+    image: "/projects/portfoliov2.png"
   },
   {
     title: "FlowTech AP3",
@@ -31,17 +32,19 @@ const projects = [
     githubLink: "https://github.com/Bts-Sio-CCI/flowtech-ap3",
     year: "2025",
     type: "BTS",
-    pinned: false
+    pinned: false,
+    image: "/projects/flowtech3.png"
   },
   {
     title: "Conférence sur l'IA",
     description: "Conférencier sur les IA lors de la Digiweek 2024 à Nîmes. Présentation du kit de sensibilisation à des étudiants",
     technologies: [],
-    liveLink: "",
+    liveLink: "https://www.nimes-metropole.fr/actualites/9eme-edition-de-la-digiweek-de-nimes-metropole-les-20-21-novembre-2024-a-lhotel-communautaire-de-nimes-metropole.html",
     githubLink: "",
     year: "2024",
     type: "Autre",
-    pinned: true
+    pinned: true,
+    image: "/projects/conference-ia.jpg"
   },
   {
     title: "Kit IA",
@@ -51,7 +54,8 @@ const projects = [
     githubLink: "https://github.com/spitzerl/kit-sensibilisation-ia",
     year: "2024",
     type: "Personnel",
-    pinned: true
+    pinned: true,
+    image: "/projects/kit-ia.png"
   },
   {
     title: "FlowTech AP2",
@@ -61,7 +65,8 @@ const projects = [
     githubLink: "https://github.com/Bts-Sio-CCI/FlowTechAP2",
     year: "2024",
     type: "BTS",
-    pinned: false
+    pinned: false,
+    image: "/projects/flowtech2.png"
   },
   {
     title: "ViewToDo",
@@ -71,7 +76,8 @@ const projects = [
     githubLink: "https://github.com/spitzerl/ViewTodo",
     year: "2024",
     type: "Personnel",
-    pinned: false
+    pinned: false,
+    image: ""
   },
   {
     title: "FlowTech AP1",
@@ -81,7 +87,8 @@ const projects = [
     githubLink: "https://github.com/Bts-Sio-CCI/FlowTechAP1",
     year: "2023",
     type: "BTS",
-    pinned: false
+    pinned: false,
+    image: "/projects/flowtech1.png"
   },
   {
     title: "Portfolio V1",
@@ -91,7 +98,8 @@ const projects = [
     githubLink: "",
     year: "2025",
     type: "Personnel",
-    pinned: false
+    pinned: false,
+    image: "/projects/portfoliov1.png"
   },
 ]
 
@@ -174,7 +182,7 @@ export function Projects() {
                   </CardContent>
                 </Card>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px]">
+              <DialogContent className="sm:max-w-[600px]">
                 <DialogHeader>
                   <DialogTitle className="flex items-center gap-2">
                     {project.title}
@@ -182,6 +190,15 @@ export function Projects() {
                   </DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
+                  {project.image && project.image !== "" && (
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={`Capture d'écran de ${project.title}`}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  )}
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">
                       {project.year} - {project.type}
