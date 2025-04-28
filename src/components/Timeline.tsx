@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Modal } from './Modal';
 
 // Interface pour les événements de la timeline
 interface TimelineEvent {
