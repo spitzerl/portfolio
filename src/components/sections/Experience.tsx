@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 const experiences = [
   {
     period: "Janvier 2025 - Février 2025",
-    title: "Testeur QA",
+    title: "A",
     company: "PeopleSpheres",
     location: "Montpellier",
     description: "Développement de tests automatisés pour une application de SIRH",

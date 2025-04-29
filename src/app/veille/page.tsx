@@ -1,9 +1,11 @@
 import { Timeline } from '@/components/Timeline';
+import { Navbar } from '@/components/Navbar';
 
 export default function VeillePage() {
   return (
     <main className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto px-4">
+      <Navbar />
+      <div className="container mx-auto px-4 pt-16">
         <h1 className="text-4xl font-bold text-center mb-8">
           Veille Technologique Web
         </h1>
