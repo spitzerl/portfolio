@@ -2,16 +2,18 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Building2, Calendar } from "lucide-react"
+import { Building2, Calendar, Download } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const experiences = [
   {
     period: "Janvier 2025 - Février 2025",
-    title: "Testeur Q&A",
+    title: "Testeur QA",
     company: "PeopleSpheres",
     location: "Montpellier",
     description: "Développement de tests automatisés pour une application de SIRH",
-    contractType: "stage"
+    contractType: "stage",
+    reportLink: "/documents/Rapport_stage_PeopleSphertes_SPITZER_Lucas.pdf"
   },
   {
     period: "Mai 2024 - Juin 2024",
@@ -68,6 +70,19 @@ export function Experience() {
                     <span>{exp.period}</span>
                   </div>
                   <p className="text-sm text-muted-foreground">{exp.description}</p>
+                  {exp.reportLink && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-fit mt-2"
+                      asChild
+                    >
+                      <a href={exp.reportLink} target="_blank" rel="noopener noreferrer">
+                        <Download className="w-4 h-4 mr-2" />
+                        Télécharger le rapport
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
