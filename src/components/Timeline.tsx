@@ -32,7 +32,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Tests automatisés générés par l'IA\n" +
       "• Refactoring intelligent du code",
     presentation: "L'intelligence artificielle transforme radicalement la façon dont nous développons des applications web. Les outils basés sur l'IA permettent d'accélérer le développement, d'améliorer la qualité du code et d'automatiser des tâches répétitives.",
-    link: "https://www.w3.org/blog/news/archives/2023/09/ai_in_web_development"
+    link: "https://www.w3.org/blog/2023/09/ai-in-web-development/"
   },
   {
     date: "Octobre 2023",
@@ -101,42 +101,81 @@ const timelineEvents: TimelineEvent[] = [
   },
   {
     date: "Mars 2024",
-    title: "Le futur du CSS",
-    description: "Nouvelles fonctionnalités CSS transformant le design web",
-    details: "Les innovations CSS incluent :\n\n" +
-      "• Container Queries\n" +
-      "• Cascade Layers\n" +
-      "• View Transitions API\n" +
-      "• Color Spaces\n" +
-      "• Subgrid",
-    presentation: "Le CSS évolue rapidement avec de nouvelles fonctionnalités qui transforment la façon dont nous concevons les interfaces web. Ces avancées permettent de créer des designs plus sophistiqués et plus maintenables.",
-    link: "https://www.w3.org/Style/CSS/"
+    title: "WebGPU : La révolution du rendu 3D dans le navigateur",
+    description: "Lancement officiel de WebGPU, permettant des performances graphiques proches du natif",
+    details: "Les avancées majeures incluent :\n\n" +
+      "• Support natif du GPU dans le navigateur\n" +
+      "• Performances 3D exceptionnelles\n" +
+      "• Support des shaders modernes\n" +
+      "• Intégration avec WebGL et WebGL2\n" +
+      "• Optimisation pour l'IA et le machine learning",
+    presentation: "WebGPU représente une avancée majeure dans les capacités graphiques du web, permettant de créer des applications 3D performantes directement dans le navigateur sans plugins.",
+    link: "https://developer.mozilla.org/fr/docs/Web/API/WebGPU_API"
   },
   {
-    date: "Avril 2024",
-    title: "La sécurité web évolue",
-    description: "Nouvelles menaces et solutions de sécurité web",
-    details: "Les innovations de sécurité incluent :\n\n" +
-      "• Protection contre les attaques quantiques\n" +
-      "• Authentification sans mot de passe\n" +
-      "• Détection des vulnérabilités par IA\n" +
-      "• Sécurité Zero Trust\n" +
-      "• Conformité renforcée",
-    presentation: "La sécurité web évolue face aux nouvelles menaces. Les développeurs doivent adopter de nouvelles pratiques et outils pour protéger leurs applications et leurs utilisateurs.",
-    link: "https://owasp.org/"
+    date: "Février 2024",
+    title: "React 19 : Les nouveautés majeures",
+    description: "Sortie de React 19 avec des améliorations significatives des performances",
+    details: "Les innovations incluent :\n\n" +
+      "• Compilateur React optimisé\n" +
+      "• Nouveau système de gestion d'état\n" +
+      "• Meilleure gestion des effets secondaires\n" +
+      "• Support amélioré du SSR\n" +
+      "• Nouvelles API pour les hooks",
+    presentation: "React 19 apporte des améliorations majeures en termes de performances et de développeur experience, rendant les applications plus rapides et plus faciles à maintenir.",
+    link: "https://react.dev/blog/2024/02/15/react-19"
   },
   {
-    date: "Mai 2024",
-    title: "Le futur du développement web",
-    description: "Tendances émergentes dans le développement web",
-    details: "Les tendances incluent :\n\n" +
-      "• Low-Code/No-Code\n" +
-      "• Micro-frontends\n" +
-      "• Serverless\n" +
-      "• WebAssembly\n" +
-      "• Edge Computing",
-    presentation: "Le développement web continue d'évoluer avec de nouvelles approches et technologies. Ces tendances transforment la façon dont nous construisons et déployons les applications web.",
-    link: "https://www.w3.org/TR/"
+    date: "Janvier 2024",
+    title: "Les PWA évoluent avec les nouvelles capacités",
+    description: "Nouvelles fonctionnalités pour les Progressive Web Apps",
+    details: "Les avancées incluent :\n\n" +
+      "• Support du mode hors ligne avancé\n" +
+      "• Nouvelles API de paiement\n" +
+      "• Meilleure intégration système\n" +
+      "• Support des notifications riches\n" +
+      "• Partage de fichiers amélioré",
+    presentation: "Les PWA deviennent de véritables alternatives aux applications natives avec des capacités étendues et une meilleure intégration avec les systèmes d'exploitation.",
+    link: "https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps"
+  },
+  {
+    date: "Décembre 2023",
+    title: "WebAssembly : L'avenir du web performant",
+    description: "Les dernières avancées de WebAssembly pour le web",
+    details: "Les innovations incluent :\n\n" +
+      "• Support du multithreading\n" +
+      "• Garbage collection intégré\n" +
+      "• Meilleures performances\n" +
+      "• Support des langages de haut niveau\n" +
+      "• Déploiement simplifié",
+    presentation: "WebAssembly continue d'évoluer pour offrir des performances natives dans le navigateur, ouvrant la voie à de nouvelles applications web complexes.",
+    link: "https://developer.mozilla.org/fr/docs/WebAssembly"
+  },
+  {
+    date: "Novembre 2023",
+    title: "Next.js 14 : La révolution du Server Components",
+    description: "Sortie de Next.js 14 avec des améliorations majeures",
+    details: "Les nouveautés incluent :\n\n" +
+      "• Server Components par défaut\n" +
+      "• Partial Prerendering\n" +
+      "• Meilleure gestion du cache\n" +
+      "• Optimisations des images\n" +
+      "• Support amélioré des API",
+    presentation: "Next.js 14 transforme la façon dont nous construisons les applications web avec une approche hybride client/serveur optimisée.",
+    link: "https://nextjs.org/blog/next-14"
+  },
+  {
+    date: "Octobre 2023",
+    title: "TypeScript 5.3 : Les nouvelles fonctionnalités",
+    description: "Mise à jour majeure de TypeScript avec de nouvelles capacités",
+    details: "Les améliorations incluent :\n\n" +
+      "• Nouveau système de types\n" +
+      "• Meilleure inférence de types\n" +
+      "• Support des décorateurs\n" +
+      "• Optimisations des performances\n" +
+      "• Nouveaux utilitaires de types",
+    presentation: "TypeScript 5.3 apporte des améliorations significatives pour le typage statique, rendant le développement plus sûr et plus productif.",
+    link: "https://devblogs.microsoft.com/typescript/announcing-typescript-5-3/"
   }
 ];
 

@@ -1,19 +1,19 @@
-import { Timeline } from '@/components/Timeline';
-import { Navbar } from '@/components/Navbar';
+import { SimpleNavbar } from "@/components/SimpleNavbar"
+import { Timeline } from "@/components/Timeline"
 
 export default function VeillePage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
-      <Navbar />
-      <div className="container mx-auto px-4 pt-16">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Veille Technologique Web
+    <main className="min-h-screen py-16 sm:py-24 px-4">
+      <SimpleNavbar />
+      <div className="max-w-6xl mx-auto pt-16">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3 text-center">
+          Veille Technologique
         </h1>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Découvrez les évolutions majeures des technologies web depuis septembre 2023.
+        <p className="text-lg text-muted-foreground text-center mb-8 sm:mb-12">
+          Les évolutions des technologies du web
         </p>
         <Timeline />
       </div>
     </main>
-  );
+  )
 } 

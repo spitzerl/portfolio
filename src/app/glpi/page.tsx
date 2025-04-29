@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
-import { Navbar } from "@/components/Navbar"
+import { SimpleNavbar } from "@/components/SimpleNavbar"
 
 export default function GLPIPage() {
   return (
     <main className="min-h-screen py-16 sm:py-24 px-4">
-      <Navbar />
+      <SimpleNavbar />
       <div className="max-w-6xl mx-auto pt-16">
         <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">
           GLPI - Gestionnaire Libre de Parc Informatique
