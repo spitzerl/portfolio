@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { Navbar } from "@/components/Navbar"
@@ -14,7 +15,7 @@ export default function GLPIPage() {
         <div className="prose prose-gray dark:prose-invert max-w-none mb-12">
           <p className="text-lg text-muted-foreground text-center mb-8">
             GLPI est un logiciel libre de gestion de parc informatique et de helpdesk, 
-            permettant de gérer efficacement les ressources informatiques d'une entreprise.
+            permettant de gérer efficacement les ressources informatiques d&apos;une entreprise.
           </p>
         </div>
 
@@ -33,7 +34,7 @@ export default function GLPIPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
-                  <span>Gestion des tickets d'incident et de demande</span>
+                  <span>Gestion des tickets d&apos;incident et de demande</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
@@ -69,7 +70,7 @@ export default function GLPIPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
-                  <span>API REST pour l'intégration avec d'autres outils</span>
+                  <span>API REST pour l&apos;intégration avec d&apos;autres outils</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
@@ -100,7 +101,7 @@ export default function GLPIPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Tableau de Bord</h3>
                 <p className="text-muted-foreground">
-                  Vue d'ensemble des éléments importants : tickets, matériel, licences et contrats.
+                  Vue d&apos;ensemble des éléments importants : tickets, matériel, licences et contrats.
                 </p>
               </CardContent>
             </Card>
@@ -117,7 +118,7 @@ export default function GLPIPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Gestion des Tickets</h3>
                 <p className="text-muted-foreground">
-                  Suivi des incidents et demandes avec système de priorité et d'escalade.
+                  Suivi des incidents et demandes avec système de priorité et d&apos;escalade.
                 </p>
               </CardContent>
             </Card>
@@ -151,7 +152,7 @@ export default function GLPIPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Rapports</h3>
                 <p className="text-muted-foreground">
-                  Génération de rapports personnalisés pour l'analyse et la prise de décision.
+                  Génération de rapports personnalisés pour l&apos;analyse et la prise de décision.
                 </p>
               </CardContent>
             </Card>
