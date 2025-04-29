@@ -13,7 +13,7 @@ import { Download } from "lucide-react";
 export function CVDownloadButton() {
   // Fonction pour télécharger le CV
   const downloadCV = (language: string) => {
-    const cvPath = `/cv/CV_SPITZER_Lucas_${language}.pdf`;
+    const cvPath = `/documents/CV_SPITZER_Lucas_${language}.pdf`;
     window.open(cvPath, "_blank");
   };
 
