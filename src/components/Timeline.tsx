@@ -22,6 +22,32 @@ const truncateText = (text: string, maxLength: number = 100) => {
 // Données de la timeline
 const timelineEvents: TimelineEvent[] = [
   {
+    date: "Juillet 2023",
+    title: "Standardisation accrue autour de ECMAScript",
+    description: "De nouvelles fonctionnalités JS sont standardisées, favorisant un écosystème unifié",
+    details: "Les apports récents incluent :\n\n" +
+      "• Les décorateurs\n" +
+      "• Les Records & Tuples\n" +
+      "• Le pattern matching\n" +
+      "• Les améliorations des Promises\n" +
+      "• Une meilleure compatibilité inter-navigateurs",
+    presentation: "La standardisation continue d'ECMAScript garantit une meilleure cohérence entre les plateformes et facilite l'adoption de nouvelles fonctionnalités dans les navigateurs modernes.",
+    link: "https://fr.wikipedia.org/wiki/ECMAScript"
+  },
+{
+    date: "Août 2023",
+    title: "Frameworks CSS modernes gagnent en popularité",
+    description: "Adoption accrue de Tailwind CSS, Vanilla Extract et autres outils utilitaires",
+    details: "Les frameworks CSS modernes permettent :\n\n" +
+      "• Des composants plus modulaires\n" +
+      "• Un développement plus rapide\n" +
+      "• Moins de surcharge CSS\n" +
+      "• Une meilleure maintenabilité\n" +
+      "• Des performances accrues",
+    presentation: "L'émergence de nouveaux frameworks CSS utilitaires améliore la rapidité de prototypage tout en maintenant une base de code propre et évolutive.",
+    link: "https://tailwindcss.com/"
+  },
+{
     date: "Septembre 2023",
     title: "L'IA générative révolutionne le développement web",
     description: "Intégration massive des modèles d'IA dans les outils de développement web",
@@ -32,9 +58,9 @@ const timelineEvents: TimelineEvent[] = [
       "• Tests automatisés générés par l'IA\n" +
       "• Refactoring intelligent du code",
     presentation: "L'intelligence artificielle transforme radicalement la façon dont nous développons des applications web. Les outils basés sur l'IA permettent d'accélérer le développement, d'améliorer la qualité du code et d'automatiser des tâches répétitives.",
-    link: "https://www.w3.org/blog/2023/09/ai-in-web-development/"
+    link: "https://aicrafters.com/fr-fr/revolution-du-developpement-web-avec-lia-generative/"
   },
-  {
+{
     date: "Octobre 2023",
     title: "WebAssembly 2.0",
     description: "Nouvelle version de WebAssembly avec support multithreading et garbage collection",
@@ -47,20 +73,7 @@ const timelineEvents: TimelineEvent[] = [
     presentation: "WebAssembly 2.0 représente une avancée majeure pour les applications web performantes. Cette technologie permet d'exécuter du code natif dans le navigateur avec des performances proches du natif, ouvrant la voie à de nouvelles applications web complexes.",
     link: "https://webassembly.org/roadmap/"
   },
-  {
-    date: "Novembre 2023",
-    title: "L'essor du Web3 et des applications décentralisées",
-    description: "Adoption croissante des technologies blockchain dans le développement web",
-    details: "Les innovations incluent :\n\n" +
-      "• Smart contracts sur le web\n" +
-      "• Authentification décentralisée\n" +
-      "• Stockage distribué\n" +
-      "• Applications autonomes\n" +
-      "• Nouveaux modèles économiques",
-    presentation: "Le Web3 transforme l'internet en un réseau décentralisé où les utilisateurs ont un contrôle total sur leurs données. Cette évolution ouvre de nouvelles possibilités pour les applications web, notamment en termes de sécurité et de transparence.",
-    link: "https://ethereum.org/fr/web3/"
-  },
-  {
+{
     date: "Décembre 2023",
     title: "La révolution du Edge Computing",
     description: "Déploiement massif des applications web sur le edge",
@@ -71,9 +84,9 @@ const timelineEvents: TimelineEvent[] = [
       "• Sécurité renforcée\n" +
       "• Scalabilité améliorée",
     presentation: "Le Edge Computing révolutionne l'architecture des applications web en rapprochant le traitement des données des utilisateurs. Cette approche permet d'améliorer significativement les performances et l'expérience utilisateur.",
-    link: "https://www.cloudflare.com/learning/edge/what-is-edge-computing/"
+    link: "https://fr.wikipedia.org/wiki/Edge_computing"
   },
-  {
+{
     date: "Janvier 2024",
     title: "L'accessibilité devient une priorité",
     description: "Nouvelles normes et outils pour l'accessibilité web",
@@ -86,20 +99,33 @@ const timelineEvents: TimelineEvent[] = [
     presentation: "L'accessibilité web devient une priorité absolue avec de nouvelles normes et outils. Cette évolution permet de rendre le web accessible à tous les utilisateurs, quel que soit leur handicap.",
     link: "https://www.w3.org/WAI/standards-guidelines/wcag/"
   },
-  {
+{
     date: "Février 2024",
-    title: "La révolution du Web Components",
-    description: "Adoption massive des Web Components dans les applications web modernes",
-    details: "Les avantages des Web Components :\n\n" +
-      "• Réutilisabilité native\n" +
-      "• Encapsulation CSS\n" +
-      "• Compatibilité cross-framework\n" +
-      "• Performance optimale\n" +
-      "• Maintenance simplifiée",
-    presentation: "Les Web Components représentent une avancée majeure dans le développement web en permettant de créer des composants réutilisables qui fonctionnent dans n'importe quel framework ou sans framework.",
-    link: "https://developer.mozilla.org/fr/docs/Web/API/Web_components"
+    title: "TypeScript 5.4 : Les nouvelles fonctionnalités",
+    description: "Mise à jour majeure de TypeScript avec de nouvelles capacités",
+    details: "Les améliorations incluent :\n\n" +
+      "• Nouveau système de types\n" +
+      "• Meilleure inférence de types\n" +
+      "• Support des décorateurs\n" +
+      "• Optimisations des performances\n" +
+      "• Nouveaux utilitaires de types",
+    presentation: "TypeScript 5.4 apporte des améliorations significatives pour le typage statique, rendant le développement plus sûr et plus productif.",
+    link: "https://devblogs.microsoft.com/typescript/announcing-typescript-5-4/"
   },
-  {
+{
+    date: "Mars 2024",
+    title: "React 19 Beta : Les nouveautés majeures",
+    description: "Annonce de la version bêta de React 19 avec des améliorations significatives",
+    details: "Les innovations incluent :\n\n" +
+      "• Actions de serveur intégrées\n" +
+      "• Optimisations de rendu automatiques\n" +
+      "• Nouveau système de gestion d'état\n" +
+      "• Meilleure gestion des effets secondaires\n" +
+      "• Support amélioré du SSR",
+    presentation: "React 19 apporte des améliorations majeures en termes de performances et de développeur experience, rendant les applications plus rapides et plus faciles à maintenir.",
+    link: "https://react.dev/versions"
+  },
+{
     date: "Mars 2024",
     title: "WebGPU : La révolution du rendu 3D dans le navigateur",
     description: "Lancement officiel de WebGPU, permettant des performances graphiques proches du natif",
@@ -110,73 +136,34 @@ const timelineEvents: TimelineEvent[] = [
       "• Intégration avec WebGL et WebGL2\n" +
       "• Optimisation pour l'IA et le machine learning",
     presentation: "WebGPU représente une avancée majeure dans les capacités graphiques du web, permettant de créer des applications 3D performantes directement dans le navigateur sans plugins.",
-    link: "https://developer.mozilla.org/fr/docs/Web/API/WebGPU_API"
+    link: "https://developer.chrome.com/docs/web-platform/webgpu/overview?hl=fr"
   },
-  {
-    date: "Février 2024",
-    title: "React 19 : Les nouveautés majeures",
-    description: "Sortie de React 19 avec des améliorations significatives des performances",
-    details: "Les innovations incluent :\n\n" +
-      "• Compilateur React optimisé\n" +
-      "• Nouveau système de gestion d'état\n" +
-      "• Meilleure gestion des effets secondaires\n" +
-      "• Support amélioré du SSR\n" +
-      "• Nouvelles API pour les hooks",
-    presentation: "React 19 apporte des améliorations majeures en termes de performances et de développeur experience, rendant les applications plus rapides et plus faciles à maintenir.",
-    link: "https://react.dev/blog/2024/02/15/react-19"
+{
+    date: "Janvier 2025",
+    title: "L'IA dans le développement web : La prochaine révolution",
+    description: "Intégration avancée de l'IA dans les outils de développement web",
+    details: "Les avancées majeures incluent :\n\n" +
+      "• Génération automatique de tests unitaires\n" +
+      "• Optimisation intelligente du code\n" +
+      "• Détection automatique des vulnérabilités\n" +
+      "• Génération de documentation\n" +
+      "• Refactoring intelligent",
+    presentation: "L'intelligence artificielle continue de transformer le développement web avec des outils toujours plus sophistiqués et autonomes.",
+    link: "https://litslink.com/blog/using-ai-for-web-development"
   },
-  {
-    date: "Janvier 2024",
-    title: "Les PWA évoluent avec les nouvelles capacités",
-    description: "Nouvelles fonctionnalités pour les Progressive Web Apps",
-    details: "Les avancées incluent :\n\n" +
-      "• Support du mode hors ligne avancé\n" +
-      "• Nouvelles API de paiement\n" +
-      "• Meilleure intégration système\n" +
-      "• Support des notifications riches\n" +
-      "• Partage de fichiers amélioré",
-    presentation: "Les PWA deviennent de véritables alternatives aux applications natives avec des capacités étendues et une meilleure intégration avec les systèmes d'exploitation.",
-    link: "https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps"
-  },
-  {
-    date: "Décembre 2023",
-    title: "WebAssembly : L'avenir du web performant",
-    description: "Les dernières avancées de WebAssembly pour le web",
-    details: "Les innovations incluent :\n\n" +
-      "• Support du multithreading\n" +
-      "• Garbage collection intégré\n" +
-      "• Meilleures performances\n" +
-      "• Support des langages de haut niveau\n" +
-      "• Déploiement simplifié",
-    presentation: "WebAssembly continue d'évoluer pour offrir des performances natives dans le navigateur, ouvrant la voie à de nouvelles applications web complexes.",
-    link: "https://developer.mozilla.org/fr/docs/WebAssembly"
-  },
-  {
-    date: "Novembre 2023",
-    title: "Next.js 14 : La révolution du Server Components",
-    description: "Sortie de Next.js 14 avec des améliorations majeures",
-    details: "Les nouveautés incluent :\n\n" +
-      "• Server Components par défaut\n" +
-      "• Partial Prerendering\n" +
-      "• Meilleure gestion du cache\n" +
-      "• Optimisations des images\n" +
-      "• Support amélioré des API",
-    presentation: "Next.js 14 transforme la façon dont nous construisons les applications web avec une approche hybride client/serveur optimisée.",
-    link: "https://nextjs.org/blog/next-14"
-  },
-  {
-    date: "Octobre 2023",
-    title: "TypeScript 5.3 : Les nouvelles fonctionnalités",
-    description: "Mise à jour majeure de TypeScript avec de nouvelles capacités",
-    details: "Les améliorations incluent :\n\n" +
-      "• Nouveau système de types\n" +
-      "• Meilleure inférence de types\n" +
-      "• Support des décorateurs\n" +
-      "• Optimisations des performances\n" +
-      "• Nouveaux utilitaires de types",
-    presentation: "TypeScript 5.3 apporte des améliorations significatives pour le typage statique, rendant le développement plus sûr et plus productif.",
-    link: "https://devblogs.microsoft.com/typescript/announcing-typescript-5-3/"
-  }
+{
+  date: "Février 2025",
+  title: "L'accessibilité renforcée par l'IA",
+  description: "Les outils IA permettent une personnalisation automatique de l'accessibilité",
+  details: "Les avancées majeures incluent :\n\n" +
+    "• Thèmes adaptatifs\n" +
+    "• Ajustement automatique des contrastes\n" +
+    "• Navigation guidée par IA\n" +
+    "• Audit automatique des sites\n" +
+    "• Assistance vocale intégrée",
+  presentation: "Les outils d'accessibilité se modernisent grâce à l'IA, rendant les sites plus inclusifs sans effort de la part des développeurs.",
+  link: "https://userway.org/"
+}
 ];
 
 // Composant Timeline
