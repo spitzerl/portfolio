@@ -61,7 +61,7 @@ const projects = [
     title: "FlowTech AP2",
     description: "Site de e-commerce fictif vendant des ordinateurs, permet aux utilisateurs de s'inscrire, passer des commandes et aux vendeurs de gérer leurs produits.",
     technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-    liveLink: "",
+    liveLink: "https://flowtech.adam-marzuk.fr/",
     githubLink: "https://github.com/Bts-Sio-CCI/FlowTechAP2",
     year: "2024",
     type: "BTS",
