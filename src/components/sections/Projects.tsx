@@ -47,15 +47,15 @@ const projects = [
     image: "/projects/conference-ia.jpg"
   },
   {
-    title: "Kit IA",
+    title: "Kit IA V2",
     description: "Site à but pédagogique visant à sensibiliser les élèves aux enjeux des intelligences artificielles.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    technologies: ["NuxtJS", "Bootstrap", "Tailwind CSS", "Vercel"],
     liveLink: "https://kit-sensibilisation-ia.vercel.app/",
     githubLink: "https://github.com/spitzerl/kit-sensibilisation-ia",
     year: "2024",
     type: "Personnel",
     pinned: true,
-    image: "/projects/kit-ia.png"
+    image: "/projects/kit-ia-v2.png"
   },
   {
     title: "FlowTech AP2",
@@ -78,6 +78,17 @@ const projects = [
     type: "Personnel",
     pinned: false,
     image: ""
+  },
+  {
+    title: "Kit IA V1",
+    description: "Site à but pédagogique visant à sensibiliser les élèves aux enjeux des intelligences artificielles.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    liveLink: "https://kit-ia.adam-marzuk.fr/",
+    githubLink: "https://github.com/Bts-Sio-CCI/kit-ia",
+    year: "2024",
+    type: "Personnel",
+    pinned: false,
+    image: "/projects/kit-ia-v1.png"
   },
   {
     title: "FlowTech AP1",
