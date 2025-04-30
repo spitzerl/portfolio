@@ -32,7 +32,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Les améliorations des Promises\n" +
       "• Une meilleure compatibilité inter-navigateurs",
     presentation: "La standardisation continue d'ECMAScript garantit une meilleure cohérence entre les plateformes et facilite l'adoption de nouvelles fonctionnalités dans les navigateurs modernes.",
-    link: "https://github.com/tc39/proposals"
+    link: "https://fr.wikipedia.org/wiki/ECMAScript"
   },
 {
     date: "Août 2023",
@@ -45,7 +45,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Une meilleure maintenabilité\n" +
       "• Des performances accrues",
     presentation: "L'émergence de nouveaux frameworks CSS utilitaires améliore la rapidité de prototypage tout en maintenant une base de code propre et évolutive.",
-    link: "https://tailwindcss.com/blog/utility-first-css"
+    link: "https://tailwindcss.com/"
   },
 {
     date: "Septembre 2023",
@@ -58,7 +58,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Tests automatisés générés par l'IA\n" +
       "• Refactoring intelligent du code",
     presentation: "L'intelligence artificielle transforme radicalement la façon dont nous développons des applications web. Les outils basés sur l'IA permettent d'accélérer le développement, d'améliorer la qualité du code et d'automatiser des tâches répétitives.",
-    link: "https://www.w3.org/blog/2023/09/ai-in-web-development/"
+    link: "https://aicrafters.com/fr-fr/revolution-du-developpement-web-avec-lia-generative/"
   },
 {
     date: "Octobre 2023",
@@ -84,7 +84,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Sécurité renforcée\n" +
       "• Scalabilité améliorée",
     presentation: "Le Edge Computing révolutionne l'architecture des applications web en rapprochant le traitement des données des utilisateurs. Cette approche permet d'améliorer significativement les performances et l'expérience utilisateur.",
-    link: "https://www.cloudflare.com/learning/edge/what-is-edge-computing/"
+    link: "https://fr.wikipedia.org/wiki/Edge_computing"
   },
 {
     date: "Janvier 2024",
@@ -123,7 +123,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Meilleure gestion des effets secondaires\n" +
       "• Support amélioré du SSR",
     presentation: "React 19 apporte des améliorations majeures en termes de performances et de développeur experience, rendant les applications plus rapides et plus faciles à maintenir.",
-    link: "https://react.dev/blog/2024/03/19/react-19-beta"
+    link: "https://react.dev/versions"
   },
 {
     date: "Mars 2024",
@@ -136,7 +136,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Intégration avec WebGL et WebGL2\n" +
       "• Optimisation pour l'IA et le machine learning",
     presentation: "WebGPU représente une avancée majeure dans les capacités graphiques du web, permettant de créer des applications 3D performantes directement dans le navigateur sans plugins.",
-    link: "https://developer.mozilla.org/fr/docs/Web/API/WebGPU_API"
+    link: "https://developer.chrome.com/docs/web-platform/webgpu/overview?hl=fr"
   },
 {
     date: "Janvier 2025",
@@ -149,7 +149,7 @@ const timelineEvents: TimelineEvent[] = [
       "• Génération de documentation\n" +
       "• Refactoring intelligent",
     presentation: "L'intelligence artificielle continue de transformer le développement web avec des outils toujours plus sophistiqués et autonomes.",
-    link: "https://www.w3.org/blog/2025/01/ai-in-web-development/"
+    link: "https://litslink.com/blog/using-ai-for-web-development"
   },
 {
   date: "Février 2025",
@@ -162,20 +162,7 @@ const timelineEvents: TimelineEvent[] = [
     "• Audit automatique des sites\n" +
     "• Assistance vocale intégrée",
   presentation: "Les outils d'accessibilité se modernisent grâce à l'IA, rendant les sites plus inclusifs sans effort de la part des développeurs.",
-  link: "https://www.w3.org/WAI/news/2025/02/ai-a11y/"
-},
-{
-  date: "Mars 2025",
-  title: "Frameworks fullstack intégrés par défaut",
-  description: "Les nouveaux frameworks web intègrent directement frontend, backend, base de données et IA",
-  details: "Les améliorations majeures incluent :\n\n" +
-    "• CLI unifiée\n" +
-    "• Déploiement serverless natif\n" +
-    "• Authentification simplifiée\n" +
-    "• Intégration IA prête à l'emploi\n" +
-    "• Performances optimisées",
-  presentation: "Les frameworks deviennent tout-en-un, facilitant le développement rapide et la maintenance des applications complexes.",
-  link: "https://jamstack.org/blog/2025-frameworks-unifies/"
+  link: "https://userway.org/"
 }
 ];
 
