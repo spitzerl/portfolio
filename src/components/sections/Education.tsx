@@ -5,18 +5,18 @@ import { Badge } from "@/components/ui/badge"
 import { GraduationCap } from "lucide-react"
 
 const formations = [
-  {
-    period: "À venir",
-    title: "Bachelor CSI",
-    school: "ESN81, Castres",
-    isUpcoming: true,
-  },
+  // {
+  //   period: "À venir",
+  //   title: "Bachelor",
+  //   school: "",
+  //   isUpcoming: true,
+  // },
   {
     period: "2023 - 2025",
     title: "BTS SIO SLAM",
     school: "Lycée CCI Gard, Nîmes",
     isUpcoming: false,
-    isCurrent: true,
+    isCurrent: false,
   },
   {
     period: "2020 - 2023",
