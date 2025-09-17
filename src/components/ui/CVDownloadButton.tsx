@@ -29,9 +29,9 @@ export function CVDownloadButton() {
         <DropdownMenuItem onClick={() => downloadCV("fr")}>
           Français
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => downloadCV("en")}>
-          English
-        </DropdownMenuItem>
+        {/*<DropdownMenuItem onClick={() => downloadCV("en")}>*/}
+        {/*  English*/}
+        {/*</DropdownMenuItem>*/}
       </DropdownMenuContent>
     </DropdownMenu>
   );
