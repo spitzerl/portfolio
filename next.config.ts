@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Configuration pour Infomaniak - utilise la variable PORT
-  experimental: {
-    serverComponentsExternalPackages: []
+  // Configuration pour production
+  env: {
+    NODE_ENV: 'production'
   }
 };
 

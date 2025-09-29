@@ -10,7 +10,7 @@ const { parse } = require('url')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
-const hostname = 'localhost'
+const hostname = '0.0.0.0' // Écouter sur toutes les interfaces
 const port = process.env.PORT || 3000
 
 // Création de l'app Next.js
