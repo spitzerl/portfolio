@@ -1,0 +1,60 @@
+# Fichiers et dossiers à exclure du contexte Docker
+
+# Dépendances
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Next.js
+.next/
+out/
+
+# Variables d'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de développement
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# Cache et temporaires
+.cache/
+temp/
+tmp/
+
+# Tests
+coverage/
+.nyc_output/
+test-results/
+
+# Documentation de développement
+README.md
+DOCKER.md
+*.md
+
+# Scripts de développement
+docker-scripts.sh
+download-devicons.sh
+
+# Configuration de développement
+Dockerfile.dev
+docker-compose.yml
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Autres
+*.tgz
+*.tar.gz

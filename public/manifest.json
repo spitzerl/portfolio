@@ -1,18 +1,27 @@
 {
   "name": "Lucas Spitzer - Portfolio",
   "short_name": "Portfolio",
-  "description": "Portfolio de Lucas Spitzer - Développeur Web",
+  "description": "Portfolio de Lucas Spitzer - Développeur Web Full Stack",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "portrait-primary",
+  "lang": "fr",
+  "categories": ["business", "productivity"],
+  "screenshots": [],
   "icons": [
     {
       "src": "/my-notion-face-portrait.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/my-notion-face-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 } 
