@@ -10,6 +10,19 @@ const nextConfig: NextConfig = {
   // Configuration pour production
   env: {
     NODE_ENV: 'production'
+  },
+
+  // Désactivation des outils de développement en production
+  productionBrowserSourceMaps: false,
+
+  // Configuration pour désactiver le debugger
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Désactiver les overlays d'erreur en production
+  experimental: {
+    optimizeCss: true,
   }
 };
 
