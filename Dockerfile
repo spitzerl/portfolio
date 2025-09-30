@@ -17,8 +17,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Désactivation de la télémétrie Next.js pendant la construction
+# Variables d'environnement pour désactiver le debug
+ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_DEBUG=false
+ENV __NEXT_DEBUG=false
+ENV __NEXT_DISABLE_ERROR_OVERLAY=true
 
 RUN npm run build
 
@@ -26,9 +30,12 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
+# Variables d'environnement de production
 ENV NODE_ENV=production
-# Désactivation de la télémétrie Next.js pendant l'exécution
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_DEBUG=false
+ENV __NEXT_DEBUG=false
+ENV __NEXT_DISABLE_ERROR_OVERLAY=true
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
