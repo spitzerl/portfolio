@@ -1,0 +1,26 @@
+# Dockerfile pour le développement
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Installation des dépendances système nécessaires
+RUN apk add --no-cache libc6-compat
+
+# Copie des fichiers de dépendances
+COPY package*.json ./
+
+# Installation de toutes les dépendances (dev incluses)
+RUN npm install
+
+# Copie du code source
+COPY . .
+
+# Exposition du port
+EXPOSE 3000
+
+# Variables d'environnement pour le développement
+ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Commande pour le mode développement avec hot reload
+CMD ["npm", "run", "dev"]

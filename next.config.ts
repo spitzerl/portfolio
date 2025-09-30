@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+
   // Configuration pour production
   env: {
     NODE_ENV: 'production'
