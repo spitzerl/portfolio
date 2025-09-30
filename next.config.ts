@@ -1,35 +1,50 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Configuration des images pour le SEO et performance
   images: {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    formats: ['image/avif', 'image/webp'],
   },
 
-  // Configuration pour production
-  env: {
-    NODE_ENV: 'production'
+  // Optimisations de base
+  swcMinify: true,
+  poweredByHeader: false,
+  
+  // Désactiver l'indicateur de développement Next.js et les overlays
+  devIndicators: {
+    buildActivity: false,
+    buildActivityPosition: 'bottom-right',
   },
 
   // Désactivation des outils de développement en production
   productionBrowserSourceMaps: false,
 
-  // Configuration pour désactiver le debugger
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+  // Headers de sécurité de base pour le SEO
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          }
+        ]
+      }
+    ];
   },
 
-  // Désactiver les overlays d'erreur en production et l'icône de développement
-  experimental: {
-    optimizeCss: true,
+  // Variables d'environnement
+  env: {
+    NODE_ENV: process.env.NODE_ENV || 'development',
   },
-
-  // Désactiver l'indicateur de développement Next.js
-  devIndicators: {
-    buildActivity: false,
-    buildActivityPosition: 'bottom-right',
-  }
 };
 
 export default nextConfig;
