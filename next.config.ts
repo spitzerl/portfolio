@@ -20,9 +20,15 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  // Désactiver les overlays d'erreur en production
+  // Désactiver les overlays d'erreur en production et l'icône de développement
   experimental: {
     optimizeCss: true,
+  },
+
+  // Désactiver l'indicateur de développement Next.js
+  devIndicators: {
+    buildActivity: false,
+    buildActivityPosition: 'bottom-right',
   }
 };
 
