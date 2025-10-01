@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Lucas Spitzer - Étudiant BTS SIO & Développeur Full Stack | Portfolio",
-  description: "Portfolio de Lucas Spitzer, étudiant en BTS SIO SLAM et développeur full stack passionné. Découvrez mes projets web, mes compétences en développement et mon parcours en formation.",
-  keywords: "étudiant BTS SIO, BTS SIO SLAM, développeur web junior, full stack, React, TypeScript, PHP, portfolio étudiant, développeur, Nîmes, formation développement web, alternance développement, stage développement web, projets web étudiants",
+  title: "Lucas Spitzer - Étudiant Bachelor DevOps & Développeur Full Stack | Portfolio",
+  description: "Portfolio de Lucas Spitzer, étudiant en Bachelor SIN option DevOps Full Stack à l'EPSI Montpellier. Diplômé BTS SIO SLAM, découvrez mes projets web, compétences en développement et infrastructure.",
+  keywords: "étudiant Bachelor DevOps, EPSI Montpellier, Bachelor SIN, DevOps Full Stack, développeur web, React, TypeScript, PHP, Docker, portfolio étudiant, développeur, Montpellier, formation développement web, infrastructure, BTS SIO SLAM diplômé",
   authors: [{ name: "Lucas Spitzer" }],
   creator: "Lucas Spitzer",
   publisher: "Lucas Spitzer",
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Lucas Spitzer - Étudiant BTS SIO & Développeur Full Stack | Portfolio",
-    description: "Portfolio de Lucas Spitzer, étudiant en BTS SIO SLAM et développeur full stack passionné. Découvrez mes projets web, mes compétences en développement et mon parcours en formation.",
+    title: "Lucas Spitzer - Étudiant Bachelor DevOps & Développeur Full Stack | Portfolio",
+    description: "Portfolio de Lucas Spitzer, étudiant en Bachelor SIN option DevOps Full Stack à l'EPSI Montpellier. Diplômé BTS SIO SLAM, découvrez mes projets web, compétences en développement et infrastructure.",
     type: "website",
     locale: "fr_FR",
-    siteName: "Portfolio de Lucas Spitzer - Étudiant BTS SIO",
+    siteName: "Portfolio de Lucas Spitzer - Étudiant Bachelor DevOps",
   },
   other: {
     "github-profile": "https://github.com/spitzerl",
