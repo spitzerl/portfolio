@@ -39,7 +39,7 @@ export function Education() {
           {/* Ligne verticale de progression avec effet de dégradé */}
           <div className="absolute left-4 sm:left-1/2 top-[5%] bottom-[5%] w-px -translate-x-1/2">
             {/* Ligne principale */}
-            <div className="absolute inset-0 border-l-2 border-dashed border-border" />
+            <div className="absolute inset-0 border-l border-border" />
             {/* Dégradé haut */}
             <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-background to-transparent" />
             {/* Dégradé bas */}
@@ -51,14 +51,14 @@ export function Education() {
               <div key={index} className="relative">
                 {/* Point de progression avec ombre */}
                 <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 -translate-y-1/2 top-[50%]">
-                  <div className={`w-3 h-3 rounded-full shadow-sm ${
+                  <div className={`w-2.5 h-2.5 rounded-full ${
                     formation.isCurrent 
-                      ? "bg-primary/80 shadow-primary/10" 
+                      ? "bg-primary" 
                       : formation.isUpcoming 
-                        ? "border border-border/50" 
+                        ? "border border-border bg-background" 
                         : formation.isCompleted
-                          ? "bg-emerald-400/70 shadow-emerald-400/10"
-                          : "border border-primary/60"
+                          ? "bg-green-500"
+                          : "border border-primary bg-background"
                   }`} />
                 </div>
 

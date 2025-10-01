@@ -67,30 +67,32 @@ const skills = {
 
 export function About() {
   return (
-    <section id="about" className="py-16 sm:py-24 px-4">
+    <section id="about" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">À Propos</h2>
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center tracking-tight">À Propos</h2>
+        <div className="grid gap-8 lg:grid-cols-2">
           <Card>
-            <CardContent className="p-4 sm:p-6">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4">Parcours</h3>
-              <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                Diplômé du BTS SIO SLAM et actuellement étudiant en Bachelor SIN option DevOps Full Stack à l&apos;EPSI Montpellier, je suis passionné par l&apos;informatique, le développement web et l&apos;infrastructure. J&apos;ai acquis des compétences solides dans le développement d&apos;applications web modernes et l&apos;automatisation des déploiements.
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                Aimant explorer ce domaine à la recherche des dernières évolutions, j&apos;ai pour souhait de faciliter la vie des utilisateurs en proposant des logiciels fonctionnels et performants.
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                Mon objectif est de continuer à apprendre et à m&apos;améliorer dans ce domaine en constante évolution.
-              </p>
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-6">Parcours</h3>
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Diplômé du BTS SIO SLAM et actuellement étudiant en Bachelor SIN option DevOps Full Stack à l&apos;EPSI Montpellier, je suis passionné par l&apos;informatique, le développement web et l&apos;infrastructure.
+                </p>
+                <p>
+                  J&apos;ai acquis des compétences solides dans le développement d&apos;applications web modernes et l&apos;automatisation des déploiements, avec pour objectif de faciliter la vie des utilisateurs.
+                </p>
+                <p>
+                  Mon ambition est de continuer à évoluer dans ce domaine en constante innovation.
+                </p>
+              </div>
             </CardContent>
           </Card>
           <Card>
-            <CardContent className="p-4 sm:p-6">
-              <div className="space-y-4 sm:space-y-6">
+            <CardContent className="p-8">
+              <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Langages de programmation</h3>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <h3 className="text-xl font-medium mb-4">Langages de programmation</h3>
+                  <div className="flex flex-wrap gap-2">
                     {skills.languages.map((skill) => (
                       <SkillBadge key={skill.name} {...skill} />
                     ))}
@@ -98,8 +100,8 @@ export function About() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Frameworks</h3>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <h3 className="text-xl font-medium mb-4">Frameworks</h3>
+                  <div className="flex flex-wrap gap-2">
                     {skills.frameworks.map((skill) => (
                       <SkillBadge key={skill.name} {...skill} />
                     ))}
@@ -107,8 +109,8 @@ export function About() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Bases de données</h3>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <h3 className="text-xl font-medium mb-4">Bases de données</h3>
+                  <div className="flex flex-wrap gap-2">
                     {skills.databases.map((skill) => (
                       <SkillBadge key={skill.name} {...skill} />
                     ))}
@@ -116,8 +118,8 @@ export function About() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Outils de développement</h3>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <h3 className="text-xl font-medium mb-4">Outils de développement</h3>
+                  <div className="flex flex-wrap gap-2">
                     {skills.devTools.map((skill) => (
                       <SkillBadge key={skill.name} {...skill} />
                     ))}
@@ -125,8 +127,8 @@ export function About() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Outils divers</h3>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <h3 className="text-xl font-medium mb-4">Outils divers</h3>
+                  <div className="flex flex-wrap gap-2">
                     {skills.otherTools.map((skill) => (
                       <SkillBadge key={skill.name} {...skill} />
                     ))}

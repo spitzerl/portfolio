@@ -40,7 +40,7 @@ export function Hero() {
   }, [isMobile])
 
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-16">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] sm:w-[500px] sm:h-[300px] md:w-[700px] md:h-[500px] rounded-[40%_60%] bg-gradient-to-r from-amber-400/30 via-orange-400/30 to-pink-400/30 dark:from-amber-400/15 dark:via-orange-400/15 dark:to-pink-400/15 blur-[50px] sm:blur-[75px] md:blur-[100px] animate-gradient transition-transform duration-300 ease-out"
@@ -63,18 +63,21 @@ export function Hero() {
           }}
         />
       </div>
-      <div className="max-w-4xl mx-auto relative z-10">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4">
-          Lucas Spitzer
-        </h1>
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8">
-          Étudiant Bachelor DevOps & Développeur Full Stack
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-          <Button size="lg" className="w-full sm:w-auto" asChild>
+      
+      <div className="max-w-4xl mx-auto space-y-8 relative z-10">
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+            Lucas Spitzer
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground font-light">
+            Étudiant Bachelor DevOps & Développeur Full Stack
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" asChild>
             <a href="#projects">Voir les Projets</a>
           </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
+          <Button size="lg" variant="outline" asChild>
             <a href="#contact">Me Contacter</a>
           </Button>
         </div>

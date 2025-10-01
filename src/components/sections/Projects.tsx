@@ -132,7 +132,7 @@ export function Projects() {
           {sortedProjects.map((project) => (
             <Dialog key={project.title}>
               <DialogTrigger asChild>
-                <Card className="flex flex-col h-full bg-card hover:bg-accent/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+                <Card className="flex flex-col h-full bg-card hover:bg-accent/50 transition-colors cursor-pointer">
                   <CardContent className="p-4 flex flex-col h-full">
                     <div>
                       <div className="flex items-start justify-between gap-2 mb-2">
