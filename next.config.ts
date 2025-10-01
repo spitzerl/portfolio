@@ -13,10 +13,22 @@ const nextConfig: NextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   
-  // Désactiver l'indicateur de développement Next.js et les overlays
+  // Désactiver COMPLÈTEMENT l'indicateur de développement Next.js
   devIndicators: {
     buildActivity: false,
     buildActivityPosition: 'bottom-right',
+  },
+
+  // Désactiver Turbopack indicator si utilisé
+  experimental: {
+    turbo: {
+      rules: {},
+    },
+  },
+
+  // Configuration du compilateur
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 
   // Désactivation des outils de développement en production
@@ -41,10 +53,14 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Variables d'environnement
+  // Variables d'environnement pour désactiver les indicateurs
   env: {
     NODE_ENV: process.env.NODE_ENV || 'development',
+    __NEXT_DISABLE_OVERLAY: 'true',
+    __NEXT_DISABLE_BUILD_INDICATOR: 'true',
   },
+
+
 };
 
 export default nextConfig;
