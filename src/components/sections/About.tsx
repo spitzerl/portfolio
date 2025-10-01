@@ -60,7 +60,7 @@ const skills = {
     { name: "Trello", iconPath: "/devicons/trello/trello-plain.svg" },
     { name: "Confluence", iconPath: "/devicons/confluence/confluence-original.svg" },
     { name: "Teams", iconPath: "/devicons/teams/teams-original.svg" },
-    { name: "Office", iconPath: "/devicons/microsoftoffice/microsoftoffice-original.svg" },
+    { name: "Office", iconPath: "/devicons/office/office-original.svg" },
     { name: "WordPress", iconPath: "/devicons/wordpress/wordpress-original.svg" },
   ],
 }
