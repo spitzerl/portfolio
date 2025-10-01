@@ -31,30 +31,37 @@ const skills = {
     { name: "JavaScript", iconPath: "/devicons/javascript/javascript-original.svg" },
     { name: "TypeScript", iconPath: "/devicons/typescript/typescript-original.svg" },
     { name: "PHP", iconPath: "/devicons/php/php-original.svg" },
+    { name: "Python", iconPath: "/devicons/python/python-original.svg" },
     { name: "SQL", iconPath: "/devicons/mysql/mysql-original.svg" },
     { name: "C#", iconPath: "/devicons/csharp/csharp-original.svg" },
-    { name: "Java", iconPath: "/devicons/java/java-original.svg" },
   ],
   frameworks: [
     { name: "VueJS", iconPath: "/devicons/vuejs/vuejs-original.svg" },
     { name: "React", iconPath: "/devicons/react/react-original.svg" },
-    { name: "Next.js", iconPath: "/devicons/nextjs/nextjs-original.svg" },
-    { name: "Symfony", iconPath: "/devicons/symfony/symfony-original.svg" },
+    { name: "Laravel", iconPath: "/devicons/laravel/laravel-original.svg" },
     { name: "CodeIgniter", iconPath: "/devicons/codeigniter/codeigniter-plain.svg" },
     { name: "PlayWright", iconPath: "/devicons/playwright/playwright-original.svg" },
     { name: "dotNET", iconPath: "/devicons/dotnetcore/dotnetcore-original.svg" },
   ],
-  tools: [
+  databases: [
+    { name: "MySQL", iconPath: "/devicons/mysql/mysql-original.svg" },
+    { name: "PostgreSQL", iconPath: "/devicons/postgresql/postgresql-original.svg" },
+    { name: "Microsoft SQL Server", iconPath: "/devicons/sqlserver/sqlserver-original.svg" },
+  ],
+  devTools: [
     { name: "Git", iconPath: "/devicons/git/git-original.svg" },
     { name: "GitHub", iconPath: "/devicons/github/github-original.svg" },
     { name: "Azure", iconPath: "/devicons/azure/azure-original.svg" },
     { name: "Docker", iconPath: "/devicons/docker/docker-original.svg" },
     { name: "Linux", iconPath: "/devicons/linux/linux-original.svg" },
   ],
-  projectManagement: [
+  otherTools: [
     { name: "Jira", iconPath: "/devicons/jira/jira-original.svg" },
     { name: "Trello", iconPath: "/devicons/trello/trello-plain.svg" },
     { name: "Confluence", iconPath: "/devicons/confluence/confluence-original.svg" },
+    { name: "Teams", iconPath: "/devicons/teams/teams-original.svg" },
+    { name: "Office", iconPath: "/devicons/microsoftoffice/microsoftoffice-original.svg" },
+    { name: "WordPress", iconPath: "/devicons/wordpress/wordpress-original.svg" },
   ],
 }
 
@@ -100,18 +107,27 @@ export function About() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Outils de développement</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Bases de données</h3>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {skills.tools.map((skill) => (
+                    {skills.databases.map((skill) => (
                       <SkillBadge key={skill.name} {...skill} />
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Gestion de projet</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Outils de développement</h3>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {skills.projectManagement.map((skill) => (
+                    {skills.devTools.map((skill) => (
+                      <SkillBadge key={skill.name} {...skill} />
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Outils divers</h3>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                    {skills.otherTools.map((skill) => (
                       <SkillBadge key={skill.name} {...skill} />
                     ))}
                   </div>
