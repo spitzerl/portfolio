@@ -181,26 +181,26 @@
   }
 }
 
-/* Masquer complètement tous les indicateurs de développement Next.js */
-[data-nextjs-scroll-focus-boundary] {
-  display: none !important;
-}
+/* Masquer spécifiquement l'indicateur Next.js en bas à gauche */
 
-/* Masquer l'icône Next.js en bas à gauche */
-[data-nextjs-route-indicator],
+/* Tous les indicateurs Next.js connus */
+[data-nextjs-scroll-focus-boundary],
+[data-nextjs-route-indicator], 
 [data-nextjs-build-indicator],
+[data-turbopack-indicator],
+[data-turbo-indicator],
+[data-nextjs-router-indicator],
+[data-next-dev-indicator],
 .__nextjs_build_indicator,
 .__next,
 .next-build-indicator {
   display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
 }
 
-/* Masquer les overlays de développement */
-[data-nextjs-dialog-overlay],
-[data-nextjs-toast],
-[data-nextjs-portal] {
+/* Masquer les divs en position fixed en bas à gauche avec du z-index élevé */
+div[style*="position: fixed"][style*="bottom: 10px"],
+div[style*="position: fixed"][style*="bottom:10px"],
+div[style*="z-index: 9000"],
+div[style*="z-index:9000"] {
   display: none !important;
 }

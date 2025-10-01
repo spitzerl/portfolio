@@ -9,21 +9,15 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
 
-  // Optimisations de base
-  swcMinify: true,
+  // Optimisations de base (swcMinify supprimé car deprecated dans Next.js 15)
   poweredByHeader: false,
   
   // Désactiver COMPLÈTEMENT l'indicateur de développement Next.js
-  devIndicators: {
-    buildActivity: false,
-    buildActivityPosition: 'bottom-right',
-  },
+  devIndicators: false,
 
-  // Désactiver Turbopack indicator si utilisé
-  experimental: {
-    turbo: {
-      rules: {},
-    },
+  // Configuration Turbopack (corrigée pour Next.js 15)
+  turbopack: {
+    // Configuration Turbopack si nécessaire
   },
 
   // Configuration du compilateur
@@ -53,14 +47,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Variables d'environnement pour désactiver les indicateurs
+  // Variables d'environnement personnalisées (NODE_ENV supprimé car interdit)
   env: {
-    NODE_ENV: process.env.NODE_ENV || 'development',
-    __NEXT_DISABLE_OVERLAY: 'true',
-    __NEXT_DISABLE_BUILD_INDICATOR: 'true',
+    CUSTOM_DISABLE_OVERLAY: 'true',
+    CUSTOM_DISABLE_BUILD_INDICATOR: 'true',
   },
-
-
 };
 
 export default nextConfig;
