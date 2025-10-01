@@ -6,7 +6,7 @@ import { GraduationCap } from "lucide-react"
 
 const formations = [
   {
-    period: "2025 - 2028",
+    period: "2025 - 2026",
     title: "Bachelor SIN - DevOps Full Stack",
     school: "EPSI Montpellier",
     isUpcoming: false,
