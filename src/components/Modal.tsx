@@ -47,17 +47,17 @@ export const Modal: React.FC<ModalProps> = ({
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold mb-2">Présentation de la technologie</h3>
-              <p className="text-gray-600">{presentation}</p>
+              <p className="text-muted-foreground">{presentation}</p>
             </div>
 
             <div>
               <h3 className="font-semibold mb-2">Résumé</h3>
-              <p className="text-gray-600">{description}</p>
+              <p className="text-muted-foreground">{description}</p>
             </div>
             
             <div>
               <h3 className="font-semibold mb-2">Détails</h3>
-              <p className="text-gray-600 whitespace-pre-line">{details}</p>
+              <p className="text-muted-foreground whitespace-pre-line">{details}</p>
             </div>
             
             <div className="pt-4">

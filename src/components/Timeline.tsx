@@ -191,10 +191,10 @@ export const Timeline: React.FC = () => {
           {timelineEvents.map((event, index) => (
             <div key={index} className="relative flex md:items-center min-h-[90px]">
               {/* Point sur la timeline */}
-              <div className="absolute left-4 top-6 md:left-1/2 md:top-1/2 transform -translate-x-1/2 md:-translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-lg z-10"></div>
+              <div className="absolute left-4 top-6 md:left-1/2 md:top-1/2 transform -translate-x-1/2 md:-translate-y-1/2 w-3 h-3 bg-primary rounded-full z-10"></div>
               {/* Ligne pointillée */}
               <div
-                className={`hidden md:block absolute top-1/2 w-1/2 h-0.5 border-t-2 border-dashed border-gray-300 z-0
+                className={`hidden md:block absolute top-1/2 w-1/2 h-px bg-border z-0
                   ${index % 2 === 0 ? 'right-1/2' : 'left-1/2'}`}
               ></div>
               {/* Carte d'événement */}
@@ -204,12 +204,12 @@ export const Timeline: React.FC = () => {
                 style={{ order: 2 }}
               >
                 <div
-                  className="bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="bg-card p-6 rounded-lg cursor-pointer hover:bg-accent/50 transition-colors border"
                   onClick={() => setSelectedEvent(event)}
                 >
                   <div className="text-sm text-blue-500 font-medium mb-2">{event.date}</div>
                   <h3 className="text-xl font-bold mb-2 text-gray-800">{event.title}</h3>
-                  <p className="text-gray-600 text-sm h-12 overflow-hidden">
+                  <p className="text-muted-foreground text-sm h-12 overflow-hidden">
                     {truncateText(event.description, 80)}
                   </p>
                 </div>
@@ -233,7 +233,7 @@ export const Timeline: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-card rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto border"
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
@@ -254,7 +254,7 @@ export const Timeline: React.FC = () => {
                 </div>
                 
                 <div className="prose max-w-none">
-                  <p className="text-gray-600 mb-4">{selectedEvent.description}</p>
+                  <p className="text-muted-foreground mb-4">{selectedEvent.description}</p>
                   
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold mb-2 text-gray-800">Contexte</h3>
@@ -272,7 +272,7 @@ export const Timeline: React.FC = () => {
                     href={selectedEvent.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                    className="inline-flex items-center text-primary/80 hover:text-primary font-medium transition-colors"
                   >
                     En savoir plus
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

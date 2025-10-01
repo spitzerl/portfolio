@@ -6,7 +6,7 @@ import { GraduationCap } from "lucide-react"
 
 const formations = [
   {
-    period: "2025 - 2028",
+    period: "2025 - 2026",
     title: "Bachelor SIN - DevOps Full Stack",
     school: "EPSI Montpellier",
     isUpcoming: false,
@@ -39,7 +39,7 @@ export function Education() {
           {/* Ligne verticale de progression avec effet de dégradé */}
           <div className="absolute left-4 sm:left-1/2 top-[5%] bottom-[5%] w-px -translate-x-1/2">
             {/* Ligne principale */}
-            <div className="absolute inset-0 border-l-2 border-dashed border-border" />
+            <div className="absolute inset-0 border-l border-border" />
             {/* Dégradé haut */}
             <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-background to-transparent" />
             {/* Dégradé bas */}
@@ -51,14 +51,14 @@ export function Education() {
               <div key={index} className="relative">
                 {/* Point de progression avec ombre */}
                 <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 -translate-y-1/2 top-[50%]">
-                  <div className={`w-3 h-3 rounded-full shadow-sm ${
+                  <div className={`w-2.5 h-2.5 rounded-full ${
                     formation.isCurrent 
-                      ? "bg-primary shadow-primary/20" 
+                      ? "bg-primary" 
                       : formation.isUpcoming 
-                        ? "border border-border" 
+                        ? "border border-border bg-background" 
                         : formation.isCompleted
-                          ? "bg-green-500 shadow-green-500/20"
-                          : "border border-primary"
+                          ? "bg-green-500"
+                          : "border border-primary bg-background"
                   }`} />
                 </div>
 
@@ -77,11 +77,13 @@ export function Education() {
                                 formation.isCurrent 
                                   ? "default" 
                                   : formation.isCompleted 
-                                    ? "outline"
-                                    : "secondary"
+                                    ? "secondary"
+                                    : "outline"
                               }
                               className={`whitespace-nowrap text-xs ${
-                                formation.isCompleted ? "border-green-500 text-green-600" : ""
+                                formation.isCompleted 
+                                  ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800" 
+                                  : ""
                               }`}
                             >
                               {formation.period}
