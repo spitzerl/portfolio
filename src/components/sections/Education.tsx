@@ -53,12 +53,12 @@ export function Education() {
                 <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 -translate-y-1/2 top-[50%]">
                   <div className={`w-3 h-3 rounded-full shadow-sm ${
                     formation.isCurrent 
-                      ? "bg-primary shadow-primary/20" 
+                      ? "bg-primary/80 shadow-primary/10" 
                       : formation.isUpcoming 
-                        ? "border border-border" 
+                        ? "border border-border/50" 
                         : formation.isCompleted
-                          ? "bg-green-500 shadow-green-500/20"
-                          : "border border-primary"
+                          ? "bg-emerald-400/70 shadow-emerald-400/10"
+                          : "border border-primary/60"
                   }`} />
                 </div>
 
@@ -77,11 +77,13 @@ export function Education() {
                                 formation.isCurrent 
                                   ? "default" 
                                   : formation.isCompleted 
-                                    ? "outline"
-                                    : "secondary"
+                                    ? "secondary"
+                                    : "outline"
                               }
                               className={`whitespace-nowrap text-xs ${
-                                formation.isCompleted ? "border-green-500 text-green-600" : ""
+                                formation.isCompleted 
+                                  ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800" 
+                                  : ""
                               }`}
                             >
                               {formation.period}
