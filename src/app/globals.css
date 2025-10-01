@@ -180,3 +180,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Masquer complètement tous les indicateurs de développement Next.js */
+[data-nextjs-scroll-focus-boundary] {
+  display: none !important;
+}
+
+/* Masquer l'icône Next.js en bas à gauche */
+[data-nextjs-route-indicator],
+[data-nextjs-build-indicator],
+.__nextjs_build_indicator,
+.__next,
+.next-build-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Masquer les overlays de développement */
+[data-nextjs-dialog-overlay],
+[data-nextjs-toast],
+[data-nextjs-portal] {
+  display: none !important;
+}
