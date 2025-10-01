@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { SimpleNavbar } from "@/components/SimpleNavbar"
