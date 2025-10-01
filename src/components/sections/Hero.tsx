@@ -68,7 +68,7 @@ export function Hero() {
           Lucas Spitzer
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8">
-          Étudiant en BTS SIO SLAM & Développeur Full Stack
+          Étudiant Bachelor DevOps & Développeur Full Stack
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Button size="lg" className="w-full sm:w-auto" asChild>

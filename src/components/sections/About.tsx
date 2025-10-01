@@ -68,7 +68,7 @@ export function About() {
             <CardContent className="p-4 sm:p-6">
               <h3 className="text-xl sm:text-2xl font-bold mb-4">Parcours</h3>
               <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                Étudiant en BTS SIO SLAM, je suis passionné par l&apos;informatique et le développement web. J&apos;ai acquis des compétences solides dans le développement d&apos;applications web et mobiles modernes grâce à mon parcours et ma motivation.
+                Diplômé du BTS SIO SLAM et actuellement étudiant en Bachelor SIN option DevOps Full Stack à l&apos;EPSI Montpellier, je suis passionné par l&apos;informatique, le développement web et l&apos;infrastructure. J&apos;ai acquis des compétences solides dans le développement d&apos;applications web modernes et l&apos;automatisation des déploiements.
               </p>
               <p className="text-sm sm:text-base text-muted-foreground mb-4">
                 Aimant explorer ce domaine à la recherche des dernières évolutions, j&apos;ai pour souhait de faciliter la vie des utilisateurs en proposant des logiciels fonctionnels et performants.

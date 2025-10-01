@@ -5,18 +5,20 @@ import { Badge } from "@/components/ui/badge"
 import { GraduationCap } from "lucide-react"
 
 const formations = [
-  // {
-  //   period: "À venir",
-  //   title: "Bachelor",
-  //   school: "",
-  //   isUpcoming: true,
-  // },
+  {
+    period: "2025 - 2028",
+    title: "Bachelor SIN - DevOps Full Stack",
+    school: "EPSI Montpellier",
+    isUpcoming: false,
+    isCurrent: true,
+  },
   {
     period: "2023 - 2025",
     title: "BTS SIO SLAM",
     school: "Lycée CCI Gard, Nîmes",
     isUpcoming: false,
     isCurrent: false,
+    isCompleted: true,
   },
   {
     period: "2020 - 2023",
@@ -24,6 +26,7 @@ const formations = [
     school: "Lycée LaSalle, Alès",
     isUpcoming: false,
     isCurrent: false,
+    isCompleted: true,
   }
 ]
 
@@ -53,7 +56,9 @@ export function Education() {
                       ? "bg-primary shadow-primary/20" 
                       : formation.isUpcoming 
                         ? "border border-border" 
-                        : "border border-primary"
+                        : formation.isCompleted
+                          ? "bg-green-500 shadow-green-500/20"
+                          : "border border-primary"
                   }`} />
                 </div>
 
@@ -68,10 +73,19 @@ export function Education() {
                           <div className="flex items-baseline justify-between gap-4">
                             <h3 className="font-semibold text-lg">{formation.title}</h3>
                             <Badge 
-                              variant={formation.isCurrent ? "default" : "secondary"}
-                              className="whitespace-nowrap text-xs"
+                              variant={
+                                formation.isCurrent 
+                                  ? "default" 
+                                  : formation.isCompleted 
+                                    ? "outline"
+                                    : "secondary"
+                              }
+                              className={`whitespace-nowrap text-xs ${
+                                formation.isCompleted ? "border-green-500 text-green-600" : ""
+                              }`}
                             >
                               {formation.period}
+                              {formation.isCompleted && " ✓"}
                             </Badge>
                           </div>
                           <div className="flex items-center gap-1.5 text-sm text-muted-foreground mt-1">
