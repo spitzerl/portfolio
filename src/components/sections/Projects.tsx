@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Pin } from "lucide-react"
+import Image from "next/image"
 import {
   Dialog,
   DialogContent,
@@ -203,10 +204,12 @@ export function Projects() {
                 <div className="space-y-4">
                   {project.image && project.image !== "" && (
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                      <img
+                      <Image
                         src={project.image}
                         alt={`Capture d'écran de ${project.title}`}
                         className="object-cover w-full h-full"
+                        width={800}
+                        height={450}
                       />
                     </div>
                   )}
