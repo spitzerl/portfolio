@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google"
 // Import global CSS styles
+// @ts-expect-error: Importing global CSS in a TypeScript file is not typed
 import "./globals.css"
 import { metadata } from "./metadata"
 import ClientLayout from "@/components/ClientLayout"
