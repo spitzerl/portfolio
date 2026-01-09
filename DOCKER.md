@@ -82,6 +82,23 @@ cp .env.example .env.local
 - **Production** : `http://localhost:3002`
 - **Développement** : `http://localhost:3001` (si lancé avec le profil dev)
 
+## Définir l'environnement de production
+
+Créez un fichier .env.production à la racine du projet (ne le commitez pas). Exemple minimal :
+
+```
+# .env.production
+APP_ENV=production
+PORT=3002
+NEXT_PUBLIC_BASE_URL=https://mon-domaine.example
+```
+
+Le script de build utilise ces variables si le fichier existe. Les scripts fournis :
+- ./docker-scripts.sh build      -> passe les build-args au docker build
+- ./docker-scripts.sh run        -> lance le conteneur avec --env-file .env.production
+
+En alternative, fournissez les mêmes variables via l'interface Portainer (env vars) ou via un registre d'images.
+
 ## 📋 Commandes utiles
 
 ```bash
@@ -113,7 +130,7 @@ docker system prune -f
 docker logs portfolio-app
 
 # Vérifier que le port n'est pas occupé
-netstat -tulpn | grep :3000
+netstat -tulpn | grep :3002
 ```
 
 ### Erreurs de permissions

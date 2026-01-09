@@ -8,14 +8,15 @@
     "build": "next build",
     "build:analyze": "ANALYZE=true npm run build",
     "start": "node server.js",
-    "start:prod": "NODE_ENV=production node server.js",
+    "start:prod": "cross-env NODE_ENV=production node server.js",
     "start:next": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf .next out",
     "test:build": "npm run build && npm run start:prod",
-    "export": "next export"
+    "export": "next export",
+    "prestart:prod": "next build"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.4",
@@ -47,7 +48,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "cross-env": "^10.1.0",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "tailwindcss": "^4",

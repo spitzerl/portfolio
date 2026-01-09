@@ -27,8 +27,14 @@ RUN npm run build
 FROM node:18-alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
-ENV PORT=3002
+# Build args (possibles via docker build --build-arg ...)
+ARG APP_ENV=production
+ARG NEXT_PUBLIC_BASE_URL=http://localhost:3002
+ARG PORT=3002
+
+ENV NODE_ENV=${APP_ENV}
+ENV NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
+ENV PORT=${PORT}
 
 # Créer un user non-root
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
@@ -38,7 +44,7 @@ COPY --from=builder --chown=appuser:appgroup /app/.next/standalone ./
 COPY --from=builder --chown=appuser:appgroup /app/public ./public
 
 USER appuser
-EXPOSE 3002
+EXPOSE ${PORT}
 
 # Healthcheck simple via Node.js (utilise PORT si défini)
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

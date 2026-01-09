@@ -8,11 +8,39 @@ echo "================================"
 case "$1" in
   "build")
     echo "🏗️  Construction de l'image Docker..."
-    docker build -t portfolio:latest .
+    # Charger .env.production si présent pour fournir build-args
+    if [ -f .env.production ]; then
+      export $(grep -v '^#' .env.production | xargs)
+    fi
+    docker build --build-arg APP_ENV=${APP_ENV:-production} \
+                 --build-arg NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-http://localhost:3002} \
+                 --build-arg PORT=${PORT:-3002} \
+                 -t portfolio:latest .
     ;;
   "run")
     echo "🚀 Lancement du conteneur en production..."
-    docker run -d -p 3002:3002 --name portfolio-app portfolio:latest
+    # Utiliser .env.production si présent pour les variables d'environnement
+    if [ -f .env.production ]; then
+      docker run -d --env-file .env.production -p ${PORT:-3002}:${PORT:-3002} --name portfolio-app portfolio:latest
+    else
+      docker run -d -p ${PORT:-3002}:${PORT:-3002} --name portfolio-app portfolio:latest
+    fi
+    ;;
+  "standalone")
+    echo "⚙️  Lancement local du serveur standalone (.next/standalone)..."
+    # Charger .env.production si présent pour définir PORT et autres vars
+    if [ -f .env.production ]; then
+      export $(grep -v '^#' .env.production | xargs)
+    fi
+    PORT=${PORT:-3002}
+    if [ -f ./.next/standalone/server.js ]; then
+      echo "▶️  Démarrage : PORT=$PORT node ./.next/standalone/server.js"
+      PORT=$PORT node ./.next/standalone/server.js &
+      echo "PID $! — voir les logs via 'docker-scripts.sh logs' ou directement sur la console"
+    else
+      echo "❌ Aucun build standalone trouvé. Lancez 'npm run build' (ou ./docker-scripts.sh build) d'abord."
+      exit 1
+    fi
     ;;
   "dev")
     echo "🛠️  Lancement en mode développement..."

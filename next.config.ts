@@ -52,6 +52,9 @@ const nextConfig: NextConfig = {
     CUSTOM_DISABLE_OVERLAY: 'true',
     CUSTOM_DISABLE_BUILD_INDICATOR: 'true',
   },
+
+  // Générer une build standalone exploitable dans Docker
+  output: "standalone",
 };
 
 export default nextConfig;

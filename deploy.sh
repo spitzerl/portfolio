@@ -95,11 +95,23 @@ sleep 2
 # Build Docker (si Docker est disponible)
 if command -v docker &> /dev/null; then
     log "🐳 Build de l'image Docker..."
-    docker build -t portfolio:latest -t portfolio:$(date +%Y%m%d-%H%M%S) .
+    # Charger variables de production si disponibles
+    if [ -f .env.production ]; then
+      export $(grep -v '^#' .env.production | xargs)
+    fi
+    docker build --build-arg APP_ENV=${APP_ENV:-production} \
+                 --build-arg NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-http://localhost:3002} \
+                 --build-arg PORT=${PORT:-3002} \
+                 -t portfolio:latest -t portfolio:$(date +%Y%m%d-%H%M%S) .
     
     # Test de l'image Docker
     log "🧪 Test de l'image Docker..."
-    CONTAINER_ID=$(docker run -d -p $TEST_PORT:$TEST_PORT portfolio:latest)
+    TEST_PORT=${PORT:-3002}
+    if [ -f .env.production ]; then
+      CONTAINER_ID=$(docker run -d --env-file .env.production -p $TEST_PORT:$TEST_PORT portfolio:latest)
+    else
+      CONTAINER_ID=$(docker run -d -p $TEST_PORT:$TEST_PORT portfolio:latest)
+    fi
     
     # Attente que le conteneur démarre
     sleep 15
