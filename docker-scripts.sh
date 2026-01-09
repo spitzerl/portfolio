@@ -12,7 +12,7 @@ case "$1" in
     ;;
   "run")
     echo "🚀 Lancement du conteneur en production..."
-    docker run -d -p 3000:3000 --name portfolio-app portfolio:latest
+    docker run -d -p 3002:3002 --name portfolio-app portfolio:latest
     ;;
   "dev")
     echo "🛠️  Lancement en mode développement..."

@@ -1,76 +1,41 @@
-# Dockerfile optimisé pour le portfolio Next.js en production
-FROM node:18-alpine AS base
+# Dockerfile optimisé pour Portainer / Next.js (standalone output)
 
-# Installation des dépendances système nécessaires
+# --- Dependencies stage ---
+FROM node:18-alpine AS deps
+WORKDIR /app
 RUN apk add --no-cache libc6-compat
-
-# Installation des dépendances uniquement lorsque nécessaire
-FROM base AS deps
-WORKDIR /app
-
-# Installation des dépendances avec cache optimisé
-COPY package.json package-lock.json* ./
-RUN npm ci --only=production --ignore-scripts && npm cache clean --force
-
-# Reconstruction du code source avec optimisations
-FROM base AS builder
-WORKDIR /app
-
-# Réinstallation complète pour le build (including devDependencies)
-COPY package.json package-lock.json* ./
+COPY package*.json ./
 RUN npm ci
 
-# Copie du code source
-COPY . .
-
-# Variables d'environnement optimisées pour la production
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV NEXT_DEBUG=false
-ENV __NEXT_DEBUG=false
-ENV __NEXT_DISABLE_ERROR_OVERLAY=true
-ENV CI=true
-
-# Build optimisé avec nettoyage du cache
-RUN npm run build && npm cache clean --force
-
-# Image de production optimisée
-FROM base AS runner
+# --- Builder stage ---
+FROM node:18-alpine AS builder
 WORKDIR /app
-
-# Variables d'environnement de production
+# Reuse node_modules pour accélérer le build
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
 ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV NEXT_DEBUG=false
-ENV __NEXT_DEBUG=false
-ENV __NEXT_DISABLE_ERROR_OVERLAY=true
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
+RUN npm run build
 
-# Création de l'utilisateur non-root pour la sécurité
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
+# --- Runner stage (image finale) ---
+FROM node:18-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=3002
 
-# Copie optimisée des dépendances de production uniquement
-COPY --from=deps --chown=nextjs:nodejs /app/node_modules ./node_modules
+# créer un user non-root
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Copie des fichiers de l'application
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/server.js ./server.js
-COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+# Copier l'output standalone de Next.js et les assets publics
+# .next/standalone contient server.js et son package.json + node_modules nécessaires
+COPY --from=builder --chown=appuser:appgroup /app/.next/standalone ./
+COPY --from=builder --chown=appuser:appgroup /app/public ./public
 
-# Configuration de sécurité
-USER nextjs
+USER appuser
+EXPOSE 3002
 
-# Health check pour monitoring
+# Healthcheck simple via Node.js (utilise PORT si défini)
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:$PORT', (res) => { \
-    if (res.statusCode === 200) process.exit(0); else process.exit(1); \
-  }).on('error', () => process.exit(1));"
+  CMD node -e "const p=process.env.PORT||3002;require('http').get('http://127.0.0.1:'+p,res=>process.exit(res.statusCode===200?0:1)).on('error',()=>process.exit(1));"
 
-EXPOSE 3000
-
-# Utilisation du serveur personnalisé optimisé
+# Démarrage (server.js fourni par le standalone output)
 CMD ["node", "server.js"]

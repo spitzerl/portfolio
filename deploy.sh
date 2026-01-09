@@ -71,6 +71,8 @@ NODE_ENV=production npm run build
 
 # Test du build
 log "🧪 Test du build..."
+TEST_PORT=3002
+export PORT=$TEST_PORT
 timeout 30s npm run start:prod &
 SERVER_PID=$!
 
@@ -78,7 +80,7 @@ SERVER_PID=$!
 sleep 10
 
 # Test de santé
-if curl -f http://localhost:3000 > /dev/null 2>&1; then
+if curl -f http://localhost:$TEST_PORT > /dev/null 2>&1; then
     log "✅ Serveur de test fonctionnel"
 else
     error "❌ Le serveur de test ne répond pas"
@@ -97,12 +99,12 @@ if command -v docker &> /dev/null; then
     
     # Test de l'image Docker
     log "🧪 Test de l'image Docker..."
-    CONTAINER_ID=$(docker run -d -p 3001:3000 portfolio:latest)
+    CONTAINER_ID=$(docker run -d -p $TEST_PORT:$TEST_PORT portfolio:latest)
     
     # Attente que le conteneur démarre
     sleep 15
     
-    if curl -f http://localhost:3001 > /dev/null 2>&1; then
+    if curl -f http://localhost:$TEST_PORT > /dev/null 2>&1; then
         log "✅ Image Docker fonctionnelle"
     else
         warn "⚠️  L'image Docker ne répond pas correctement"

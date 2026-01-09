@@ -79,7 +79,7 @@ cp .env.example .env.local
 
 ### Ports
 
-- **Production** : `http://localhost:3000`
+- **Production** : `http://localhost:3002`
 - **Développement** : `http://localhost:3001` (si lancé avec le profil dev)
 
 ## 📋 Commandes utiles
