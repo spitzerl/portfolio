@@ -145,3 +145,21 @@ docker build --no-cache -t portfolio:latest .
 ./docker-scripts.sh clean
 ./docker-scripts.sh build
 ```
+
+## Déploiement simple via Portainer (recommandé)
+
+1. Pousser ton dépôt sur GitHub (git push).
+2. Copier `.env.production.example` -> `.env.production` et ajuster (ne pas committer).
+3. Dans Portainer → Stacks → Add stack:
+   - Select "Git repository"
+   - Repository URL: https://github.com/TON_USER/portfolio.git
+   - Compose path: /docker-compose.yml
+   - Branch: main (ou ta branche)
+   - Cliquer sur "Deploy the stack"
+4. Dans la page du container, vérifier que le port Host 3002 → Container 3002 est bien configuré et que la variable PORT=3002 est appliquée (ou fournie via .env.production).
+5. Vérifier logs et endpoint: http://<host>:3002
+
+Remarque: si tu préfères builder localement et transférer l'image sur le VPS, tu peux aussi
+- docker build -t portfolio:latest .
+- docker save portfolio:latest -o portfolio.tar
+- scp portfolio.tar user@vps:/tmp ; sur VPS docker load -i /tmp/portfolio.tar ; docker run ...
