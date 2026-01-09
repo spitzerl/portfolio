@@ -1,32 +1,39 @@
 # Dockerfile optimisé pour Portainer / Next.js (standalone output)
 
-# --- Dependencies stage ---
-FROM node:18-alpine AS deps
-WORKDIR /app
-RUN apk add --no-cache libc6-compat
-COPY package*.json ./
-RUN npm ci
-
 # --- Builder stage ---
 FROM node:18-alpine AS builder
 WORKDIR /app
-# Reuse node_modules pour accélérer le build
-COPY --from=deps /app/node_modules ./node_modules
+
+# Outils natifs nécessaires pour compiler certaines dépendances (esbuild, etc.)
+RUN apk add --no-cache libc6-compat python3 make g++ bash
+
+# Copier les fichiers package pour utiliser le cache Docker
+COPY package*.json ./
+
+# Installer toutes les dépendances nécessaires au build (inclut devDependencies)
+RUN npm ci
+
+# Copier le reste du projet
 COPY . .
+
+# Variables pour le build (augmente la mémoire Node si nécessaire)
 ENV NODE_ENV=production
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
+# Build Next.js (génère .next/standalone)
 RUN npm run build
 
 # --- Runner stage (image finale) ---
 FROM node:18-alpine AS runner
 WORKDIR /app
+
 ENV NODE_ENV=production
 ENV PORT=3002
 
-# créer un user non-root
+# Créer un user non-root
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 # Copier l'output standalone de Next.js et les assets publics
-# .next/standalone contient server.js et son package.json + node_modules nécessaires
 COPY --from=builder --chown=appuser:appgroup /app/.next/standalone ./
 COPY --from=builder --chown=appuser:appgroup /app/public ./public
 
