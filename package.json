@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NEXT_TELEMETRY_DISABLED=1 __NEXT_DISABLE_BUILD_INDICATOR=true __NEXT_DISABLE_OVERLAY=true next dev",
+    "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "build:analyze": "ANALYZE=true npm run build",
