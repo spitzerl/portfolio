@@ -13,7 +13,7 @@ const experiences = [
     location: "Montpellier",
     description: "Développement de tests automatisés pour une application de SIRH",
     contractType: "stage",
-    reportLink: "/documents/Rapport_stage_PeopleSphertes_SPITZER_Lucas.pdf"
+    reportLink: "/documents/Rapport_stage_PeopleSpheres_SPITZER_Lucas.pdf"
   },
   {
     period: "Mai 2024 - Juin 2024",
