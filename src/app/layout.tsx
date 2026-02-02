@@ -2,6 +2,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { metadata } from "./metadata"
 import ClientLayout from "@/components/ClientLayout"
+import { ReCaptchaProvider } from "@/components/ReCaptchaProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,7 +24,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/my-notion-face-portrait.png" />
       </head>
       <body className={inter.className}>
-        <ClientLayout>{children}</ClientLayout>
+        <ReCaptchaProvider>
+          <ClientLayout>{children}</ClientLayout>
+        </ReCaptchaProvider>
       </body>
     </html>
   )
