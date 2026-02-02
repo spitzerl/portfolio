@@ -64,24 +64,6 @@ export function Contact() {
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Me Contacter</h3>
               <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <h4 className="text-sm sm:text-base font-semibold">Email</h4>
-                  <div className="relative">
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      <span 
-                        className="select-none cursor-pointer hover:text-primary transition-colors"
-                        onClick={copyToClipboard}
-                      >
-                        spitzer<span className="hidden">.nospam</span>.lucas<span className="hidden">.nospam</span>@<span className="hidden">nospam.</span>proton<span className="hidden">.nospam</span>.me
-                      </span>
-                    </p>
-                    {copied && (
-                      <span className="absolute left-0 top-6 text-xs text-green-500 font-medium">
-                        Copié dans le presse-papiers
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div>
                   <h4 className="text-sm sm:text-base font-semibold">Localisation</h4>
                   <p className="text-sm sm:text-base text-muted-foreground">Nîmes, France</p>
                 </div>
