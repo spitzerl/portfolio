@@ -15,12 +15,12 @@ import {
 
 const projects = [
   {
-    title: "Portfolio",
-    description: "Une énième version de mon portfolio présentant mon parcours, mes compétences, mes projets et mes expériences. ",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI", "Docker"],
-    liveLink: "https://lucasspitzer.fr/",
-    githubLink: "https://github.com/spitzerl/portfolio/",
-    year: "2026",
+    title: "Portfolio V2",
+    description: "Portfolio présentant mes compétences et mes projets.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI", "Vercel"],
+    liveLink: "https://www.lucasspitzer.fr",
+    githubLink: "",
+    year: "2025",
     type: "Personnel",
     pinned: true,
     image: "/projects/portfoliov2.png"
@@ -48,8 +48,8 @@ const projects = [
     image: "/projects/conference-ia.jpg"
   },
   {
-    title: "Kit IA",
-    description: "Site à but pédagogique visant à sensibiliser les élèves aux enjeux des intelligences artificielles. Reprise d'un projet commencé dans le cadre du BTS.",
+    title: "Kit IA V2",
+    description: "Site à but pédagogique visant à sensibiliser les élèves aux enjeux des intelligences artificielles.",
     technologies: ["NuxtJS", "Bootstrap", "Tailwind CSS", "Vercel"],
     liveLink: "https://kit-sensibilisation-ia.vercel.app/",
     githubLink: "https://github.com/spitzerl/kit-sensibilisation-ia",
@@ -70,26 +70,48 @@ const projects = [
     image: "/projects/flowtech2.png"
   },
   {
-    title: "Cookbook",
-    description: "Site de partage de recettes de cuisines, présenté à l'exament du BTS SIO",
-    technologies: ["PHP", "Laravel", "JavaScript", "SQLite"],
+    title: "ViewToDo",
+    description: "Projet d'entrainement au framework VueJS avec Vuetify visant à développer une petite application de gestion de tâches.",
+    technologies: ["Vue.js", "Vuetify", "JavaScript", "CSS"],
     liveLink: "",
-    githubLink: "https://github.com/spitzerl/cookbook-laravel",
-    year: "2025",
-    type: "BTS",
+    githubLink: "https://github.com/spitzerl/ViewTodo",
+    year: "2024",
+    type: "Personnel",
     pinned: false,
     image: ""
   },
   {
-    title: "Dwarf BOT",
-    description: "Application Discord visant à faciliter la gestion des canaux de discussion et des rôles",
-    technologies: ["JavaScript", "Docker"],
+    title: "Kit IA V1",
+    description: "Site à but pédagogique visant à sensibiliser les élèves aux enjeux des intelligences artificielles.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    liveLink: "https://kit-ia.adam-marzuk.fr/",
+    githubLink: "https://github.com/Bts-Sio-CCI/kit-ia",
+    year: "2024",
+    type: "Personnel",
+    pinned: false,
+    image: "/projects/kit-ia-v1.png"
+  },
+  {
+    title: "FlowTech AP1",
+    description: "Site vitrine de e-commerce fictif vendant des ordinateurs.",
+    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     liveLink: "",
-    githubLink: "https://github.com/spitzerl/dwarf-bot",
+    githubLink: "https://github.com/Bts-Sio-CCI/FlowTechAP1",
+    year: "2023",
+    type: "BTS",
+    pinned: false,
+    image: "/projects/flowtech1.png"
+  },
+  {
+    title: "Portfolio V1",
+    description: "Portfolio présentant mes compétences et mes projets.",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    liveLink: "",
+    githubLink: "",
     year: "2025",
     type: "Personnel",
-    pinned: true,
-    image: ""
+    pinned: false,
+    image: "/projects/portfoliov1.png"
   },
 ]
 

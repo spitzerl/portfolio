@@ -70,7 +70,7 @@ export function Hero() {
             Lucas Spitzer
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground font-light">
-            Étudiant en informatique & Développeur Full Stack
+            Étudiant Bachelor DevOps & Développeur Full Stack
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
