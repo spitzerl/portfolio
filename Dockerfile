@@ -1,41 +1,54 @@
-# Dockerfile multi-stage pour Next.js avec standalone
+# Dockerfile optimisé pour Portainer / Next.js (standalone output)
 
-# Stage 1: Dependencies
-FROM node:20-alpine AS deps
-RUN apk add --no-cache libc6-compat
+# --- Builder stage ---
+FROM node:18-alpine AS builder
 WORKDIR /app
 
+# Outils natifs nécessaires pour compiler certaines dépendances (esbuild, etc.)
+RUN apk add --no-cache libc6-compat python3 make g++ bash
+
+# Copier les fichiers package pour utiliser le cache Docker
 COPY package*.json ./
+
+# Installer toutes les dépendances nécessaires au build (inclut devDependencies)
 RUN npm ci
 
-# Stage 2: Builder
-FROM node:20-alpine AS builder
-WORKDIR /app
-
-COPY --from=deps /app/node_modules ./node_modules
+# Copier le reste du projet
 COPY . .
 
-# Build avec standalone
+# Variables pour le build (augmente la mémoire Node si nécessaire)
+ENV NODE_ENV=production
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
+# Build Next.js (génère .next/standalone)
 RUN npm run build
 
-# Stage 3: Runner
-FROM node:20-alpine AS runner
+# --- Runner stage (image finale) ---
+FROM node:18-alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
-ENV PORT=3000
+# Build args (possibles via docker build --build-arg ...)
+ARG APP_ENV=production
+ARG NEXT_PUBLIC_BASE_URL=http://localhost:3002
+ARG PORT=3002
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+ENV NODE_ENV=${APP_ENV}
+ENV NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
+ENV PORT=${PORT}
 
-# Copier les fichiers standalone
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+# Créer un user non-root
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-USER nextjs
+# Copier l'output standalone de Next.js et les assets publics
+COPY --from=builder --chown=appuser:appgroup /app/.next/standalone ./
+COPY --from=builder --chown=appuser:appgroup /app/public ./public
 
-EXPOSE 3000
+USER appuser
+EXPOSE ${PORT}
 
-# Utiliser le serveur standalone de Next.js
+# Healthcheck simple via Node.js (utilise PORT si défini)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "const p=process.env.PORT||3002;require('http').get('http://127.0.0.1:'+p,res=>process.exit(res.statusCode===200?0:1)).on('error',()=>process.exit(1));"
+
+# Démarrage (server.js fourni par le standalone output)
 CMD ["node", "server.js"]

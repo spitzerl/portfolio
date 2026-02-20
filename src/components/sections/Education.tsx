@@ -6,6 +6,13 @@ import { GraduationCap } from "lucide-react"
 
 const formations = [
   {
+    period: "2025 - 2026",
+    title: "Bachelor SIN - DevOps Full Stack",
+    school: "EPSI Montpellier",
+    isUpcoming: false,
+    isCurrent: true,
+  },
+  {
     period: "2023 - 2025",
     title: "BTS SIO SLAM",
     school: "Lycée CCI Gard, Nîmes",

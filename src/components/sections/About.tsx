@@ -76,7 +76,7 @@ export function About() {
               <h3 className="text-2xl font-bold mb-6">Parcours</h3>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
-                  Diplômé du BTS SIO SLAM, je suis passionné par le développement, particuliérement le web, ainsi que ce qui l'entoure (devops, réseau).
+                  Diplômé du BTS SIO SLAM et actuellement étudiant en Bachelor SIN option DevOps Full Stack à l&apos;EPSI Montpellier, je suis passionné par l&apos;informatique, le développement web et l&apos;infrastructure.
                 </p>
                 <p>
                   J&apos;ai acquis des compétences solides dans le développement d&apos;applications web modernes et l&apos;automatisation des déploiements, avec pour objectif de faciliter la vie des utilisateurs.
