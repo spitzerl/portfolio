@@ -1,41 +1,42 @@
-version: "3.8"
-
+version: '3.8'
 services:
   portfolio:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        - APP_ENV=production
-        - PORT=3002
-        - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-http://localhost:3002}
-    image: portfolio:latest
+    image: ghcr.io/spitzerl/portfolio:latest
+    container_name: portfolio
     restart: unless-stopped
-    ports:
-      - "3002:3002"
-    env_file:
-      - .env.production
-    healthcheck:
-      test: ["CMD-SHELL", "node -e \"const p=process.env.PORT||3002;require('http').get('http://127.0.0.1:'+p,res=>process.exit(res.statusCode===200?0:1)).on('error',()=>process.exit(1));\""]
-      interval: 30s
-      timeout: 3s
-      retries: 3
 
-  # Service pour le développement (optionnel)
-  portfolio-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    ports:
-      - "3001:3000"
-    volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/.next
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - PORT=3000
-    restart: unless-stopped
-    container_name: portfolio-dev
-    profiles:
-      - dev
+      - NEXT_TELEMETRY_DISABLED=1
+
+    networks:
+      - nginx-proxy-manager_web_network
+
+    expose:
+      - "3000"
+
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+    labels:
+      - "com.docker.compose.project=portfolio"
+      - "maintainer=Lucas Spitzer"
+      - "description=Portfolio personnel Next.js"
+
+networks:
+  nginx-proxy-manager_web_network:
+    external: true
