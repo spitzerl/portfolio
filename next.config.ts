@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Configuration des images pour le SEO et performance
   images: {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
@@ -9,26 +8,20 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
 
-  // Optimisations de base (swcMinify supprimé car deprecated dans Next.js 15)
   poweredByHeader: false,
   
-  // Désactiver COMPLÈTEMENT l'indicateur de développement Next.js
   devIndicators: false,
 
-  // Configuration Turbopack (corrigée pour Next.js 15)
   turbopack: {
-    // Configuration Turbopack si nécessaire
+    // configuration turbopack
   },
 
-  // Configuration du compilateur
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  // Désactivation des outils de développement en production
   productionBrowserSourceMaps: false,
 
-  // Headers de sécurité de base pour le SEO
   async headers() {
     return [
       {
@@ -47,13 +40,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Variables d'environnement personnalisées (NODE_ENV supprimé car interdit)
   env: {
     CUSTOM_DISABLE_OVERLAY: 'true',
     CUSTOM_DISABLE_BUILD_INDICATOR: 'true',
   },
 
-  // Générer une build standalone exploitable dans Docker
   output: "standalone",
 };
 

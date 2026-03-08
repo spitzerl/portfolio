@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Removed unsupported @custom-variant dark (&:is(.dark *)); */
-
 :root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -112,8 +110,6 @@
   --sidebar-ring: oklch(0.45 0 0);
 }
 
-/* Removed duplicate @layer base block with @apply to fix error */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -187,9 +183,6 @@
   }
 }
 
-/* Masquer spécifiquement l'indicateur Next.js en bas à gauche */
-
-/* Tous les indicateurs Next.js connus */
 [data-nextjs-scroll-focus-boundary],
 [data-nextjs-route-indicator], 
 [data-nextjs-build-indicator],
@@ -203,7 +196,6 @@
   display: none !important;
 }
 
-/* Masquer les divs en position fixed en bas à gauche avec du z-index élevé */
 div[style*="position: fixed"][style*="bottom: 10px"],
 div[style*="position: fixed"][style*="bottom:10px"],
 div[style*="z-index: 9000"],
