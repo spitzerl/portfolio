@@ -73,14 +73,14 @@ export function Hero() {
             Étudiant Bachelor DevOps & Développeur Full Stack
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild>
             <a href="#projects">Voir les Projets</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href="#contact">Me Contacter</a>
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   )
