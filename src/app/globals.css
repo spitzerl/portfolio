@@ -110,95 +110,17 @@
   --sidebar-ring: oklch(0.45 0 0);
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 220 13% 18%;
-    --card: 0 0% 98%;
-    --card-foreground: 220 13% 18%;
-    --popover: 0 0% 98%;
-    --popover-foreground: 220 13% 18%;
-    --primary: 220 13% 18%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 220 7% 95%;
-    --secondary-foreground: 220 13% 18%;
-    --muted: 220 7% 95%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 220 7% 95%;
-    --accent-foreground: 220 13% 18%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 13% 18%;
-    --radius: 0.5rem;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
   }
 
-  .dark {
-    --background: 0 0% 0%;
-    --foreground: 210 40% 95%;
-    --card: 0 0% 1%;
-    --card-foreground: 210 40% 95%;
-    --popover: 0 0% 1%;
-    --popover-foreground: 210 40% 95%;
-    --primary: 210 40% 90%;
-    --primary-foreground: 0 0% 5%;
-    --secondary: 0 0% 3%;
-    --secondary-foreground: 210 40% 90%;
-    --muted: 0 0% 3%;
-    --muted-foreground: 215 20% 60%;
-    --accent: 0 0% 3%;
-    --accent-foreground: 210 40% 90%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 95%;
-    --border: 0 0% 6%;
-    --input: 0 0% 4%;
-    --ring: 212 72% 59%;
-  }
-}
-
-@layer base {
-  * {
-    border-color: hsl(var(--border));
-  }
-  
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-feature-settings: "rlig" 1, "calt" 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
-
-  .dark body {
-    background-color: #000000 !important;
-  }
-  
-  html {
-    color-scheme: dark;
-  }
-}
-
-[data-nextjs-scroll-focus-boundary],
-[data-nextjs-route-indicator], 
-[data-nextjs-build-indicator],
-[data-turbopack-indicator],
-[data-turbo-indicator],
-[data-nextjs-router-indicator],
-[data-next-dev-indicator],
-.__nextjs_build_indicator,
-.__next,
-.next-build-indicator {
-  display: none !important;
-}
-
-div[style*="position: fixed"][style*="bottom: 10px"],
-div[style*="position: fixed"][style*="bottom:10px"],
-div[style*="z-index: 9000"],
-div[style*="z-index:9000"] {
-  display: none !important;
 }
