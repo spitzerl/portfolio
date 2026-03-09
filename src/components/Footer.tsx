@@ -24,21 +24,6 @@ export function Footer() {
           <span>Tailwind CSS</span>
           <span>•</span>
           <span>ShadcnUI</span>
-          <span>•</span>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 hover:text-primary transition-colors">
-              <span>Pages</span>
-              <ChevronDown className="h-3 w-3" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center">
-              <DropdownMenuItem asChild>
-                <a href="/glpi" className="cursor-pointer">GLPI</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="/veille" className="cursor-pointer">Veille Technologique</a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
       </div>
     </footer>
