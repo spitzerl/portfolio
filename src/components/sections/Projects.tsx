@@ -59,59 +59,48 @@ const projects = [
     image: "/projects/kit-ia-v2.png"
   },
   {
-    title: "FlowTech AP2",
-    description: "Site de e-commerce fictif vendant des ordinateurs, permet aux utilisateurs de s'inscrire, passer des commandes et aux vendeurs de gérer leurs produits.",
-    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-    liveLink: "https://flowtech.adam-marzuk.fr/",
-    githubLink: "https://github.com/Bts-Sio-CCI/FlowTechAP2",
-    year: "2024",
-    type: "BTS",
-    pinned: false,
-    image: "/projects/flowtech2.png"
-  },
-  {
-    title: "ViewToDo",
-    description: "Projet d'entrainement au framework VueJS avec Vuetify visant à développer une petite application de gestion de tâches.",
-    technologies: ["Vue.js", "Vuetify", "JavaScript", "CSS"],
-    liveLink: "",
-    githubLink: "https://github.com/spitzerl/ViewTodo",
-    year: "2024",
+    title: "Sudbois Chargements",
+    description: "Application web de gestion de chargements permettant de créer, modifier et suivre des expéditions avec mises à jour automatiques des statuts.",
+    technologies: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Shadcn UI"],
+    liveLink: "https://sudbois-chargements.vercel.app",
+    githubLink: "https://github.com/spitzerl/sudbois-chargements",
+    year: "2025",
     type: "Personnel",
     pinned: false,
     image: ""
   },
   {
-    title: "Kit IA V1",
-    description: "Site à but pédagogique visant à sensibiliser les élèves aux enjeux des intelligences artificielles.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
-    liveLink: "https://kit-ia.adam-marzuk.fr/",
-    githubLink: "https://github.com/Bts-Sio-CCI/kit-ia",
-    year: "2024",
-    type: "Personnel",
-    pinned: false,
-    image: "/projects/kit-ia-v1.png"
-  },
-  {
-    title: "FlowTech AP1",
-    description: "Site vitrine de e-commerce fictif vendant des ordinateurs.",
-    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    title: "Dwarf Bot",
+    description: "Bot Discord de gestion de serveur permettant de gérer les salons, rôles et événements pour une meilleure expérience utilisateur.",
+    technologies: ["Node.js", "Discord.js", "JavaScript"],
     liveLink: "",
-    githubLink: "https://github.com/Bts-Sio-CCI/FlowTechAP1",
-    year: "2023",
-    type: "BTS",
-    pinned: false,
-    image: "/projects/flowtech1.png"
-  },
-  {
-    title: "Portfolio V1",
-    description: "Portfolio présentant mes compétences et mes projets.",
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    liveLink: "",
-    githubLink: "",
+    githubLink: "https://github.com/spitzerl/dwarf-bot",
     year: "2025",
     type: "Personnel",
     pinned: false,
-    image: "/projects/portfoliov1.png"
+    image: ""
+  },
+  {
+    title: "Cookbook Laravel",
+    description: "Application web de gestion de recettes de cuisine développée dans le cadre du BTS SIO SLAM, avec architecture MVC et authentification.",
+    technologies: ["Laravel", "PHP", "Bootstrap", "MySQL"],
+    liveLink: "",
+    githubLink: "https://github.com/spitzerl/cookbook-laravel",
+    year: "2025",
+    type: "BTS",
+    pinned: false,
+    image: ""
+  },
+  {
+    title: "Projet Cuve CIRA",
+    description: "Conception d'un dispositif de mesure du niveau de remplissage d'une cuve industrielle à l'aide d'un capteur ultrason, avec transmission Bluetooth.",
+    technologies: ["Arduino", "C++", "Bluetooth", "Capteur ultrason"],
+    liveLink: "",
+    githubLink: "https://github.com/spitzerl/projet-cuve-cira",
+    year: "2023",
+    type: "Scolaire",
+    pinned: false,
+    image: ""
   },
 ]
 
