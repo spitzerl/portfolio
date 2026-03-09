@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Serveur personnalisé pour Next.js compatible avec Infomaniak
- * Utilise la variable d'environnement PORT fournie par l'hébergeur
- */
-
 const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')

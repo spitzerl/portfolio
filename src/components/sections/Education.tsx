@@ -2,31 +2,18 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap } from "lucide-react"
+import { GraduationCap, Search } from "lucide-react"
 
 const formations = [
-  {
-    period: "2025 - 2026",
-    title: "Bachelor SIN - DevOps Full Stack",
-    school: "EPSI Montpellier",
-    isUpcoming: false,
-    isCurrent: true,
-  },
   {
     period: "2023 - 2025",
     title: "BTS SIO SLAM",
     school: "Lycée CCI Gard, Nîmes",
-    isUpcoming: false,
-    isCurrent: false,
-    isCompleted: true,
   },
   {
     period: "2020 - 2023",
     title: "Baccalauréat STI2D SIN",
     school: "Lycée LaSalle, Alès",
-    isUpcoming: false,
-    isCurrent: false,
-    isCompleted: true,
   }
 ]
 
@@ -35,70 +22,55 @@ export function Education() {
     <section id="education" className="py-16 sm:py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Formation</h2>
-        <div className="max-w-4xl mx-auto relative">
-          {/* Ligne verticale de progression avec effet de dégradé */}
-          <div className="absolute left-4 sm:left-1/2 top-[5%] bottom-[5%] w-px -translate-x-1/2">
-            {/* Ligne principale */}
-            <div className="absolute inset-0 border-l border-border" />
-            {/* Dégradé haut */}
-            <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-background to-transparent" />
-            {/* Dégradé bas */}
-            <div className="absolute bottom-0 h-12 w-full bg-gradient-to-t from-background to-transparent" />
-          </div>
+        <div className="max-w-3xl mx-auto relative">
+          {/* Ligne verticale de la frise */}
+          <div className="absolute left-[7px] top-0 bottom-0 w-px bg-border" />
 
-          <div className="space-y-12">
+          <div className="flex flex-col gap-6">
+            {/* Encart recherche d'alternance */}
+            <div className="flex items-center gap-4">
+              <div className="relative w-[15px] h-[15px] shrink-0 rounded-full border-2 border-primary bg-background z-10">
+                <div className="absolute inset-[3px] rounded-full bg-primary animate-pulse" />
+              </div>
+              <Card className="flex-1 border-dashed border-primary/30 bg-primary/5">
+                <CardContent className="p-4">
+                  <div className="flex items-center gap-3">
+                    <Search className="w-5 h-5 text-primary shrink-0" />
+                    <div>
+                      <p className="font-medium text-sm">En recherche d'une formation en alternance</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">Ouvert aux opportunités</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Formations */}
             {formations.map((formation, index) => (
-              <div key={index} className="relative">
-                {/* Point de progression avec ombre */}
-                <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 -translate-y-1/2 top-[50%]">
-                  <div className={`w-2.5 h-2.5 rounded-full ${
-                    formation.isCurrent 
-                      ? "bg-primary" 
-                      : formation.isUpcoming 
-                        ? "border border-border bg-background" 
-                        : formation.isCompleted
-                          ? "bg-green-500"
-                          : "border border-primary bg-background"
-                  }`} />
+              <div key={index} className="flex items-center gap-4">
+                <div className="relative w-[15px] h-[15px] shrink-0 rounded-full border-2 border-emerald-500 bg-background z-10">
+                  <div className="absolute inset-[3px] rounded-full bg-emerald-500" />
                 </div>
-
-                {/* Carte */}
-                <div className={`ml-12 sm:ml-0 ${index % 2 === 0 ? 'sm:mr-[50%] sm:pr-16' : 'sm:ml-[50%] sm:pl-16'}`}>
-                  <Card className={`transition-colors ${
-                    formation.isUpcoming ? "opacity-50" : ""
-                  }`}>
-                    <CardContent className="p-4">
-                      <div className="space-y-3">
-                        <div>
-                          <div className="flex items-baseline justify-between gap-4">
-                            <h3 className="font-semibold text-lg">{formation.title}</h3>
-                            <Badge 
-                              variant={
-                                formation.isCurrent 
-                                  ? "default" 
-                                  : formation.isCompleted 
-                                    ? "secondary"
-                                    : "outline"
-                              }
-                              className={`whitespace-nowrap text-xs ${
-                                formation.isCompleted 
-                                  ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800" 
-                                  : ""
-                              }`}
-                            >
-                              {formation.period}
-                              {formation.isCompleted && " ✓"}
-                            </Badge>
-                          </div>
-                          <div className="flex items-center gap-1.5 text-sm text-muted-foreground mt-1">
-                            <GraduationCap className="w-4 h-4 shrink-0" />
-                            <span>{formation.school}</span>
-                          </div>
-                        </div>
+                <Card className="flex-1 bg-card hover:bg-accent/5 transition-colors">
+                  <CardContent className="p-4">
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="font-semibold text-lg">{formation.title}</h3>
+                        <Badge
+                          variant="secondary"
+                          className="whitespace-nowrap text-xs bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800"
+                        >
+                          Obtenu
+                        </Badge>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                      <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                        <GraduationCap className="w-3.5 h-3.5 shrink-0" />
+                        <span>{formation.school}</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">{formation.period}</span>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             ))}
           </div>
@@ -106,4 +78,4 @@ export function Education() {
       </div>
     </section>
   )
-} 
+}

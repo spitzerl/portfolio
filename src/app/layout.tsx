@@ -22,7 +22,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Portfolio" />
         <link rel="apple-touch-icon" href="/my-notion-face-portrait.png" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} antialiased`}>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
