@@ -3,13 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
 
   poweredByHeader: false,
-  
+
   devIndicators: false,
 
   turbopack: {
@@ -22,30 +20,12 @@ const nextConfig: NextConfig = {
 
   productionBrowserSourceMaps: false,
 
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          }
-        ]
-      }
-    ];
-  },
-
   env: {
     CUSTOM_DISABLE_OVERLAY: 'true',
     CUSTOM_DISABLE_BUILD_INDICATOR: 'true',
   },
 
-  output: "standalone",
+  output: "export",
 };
 
 export default nextConfig;

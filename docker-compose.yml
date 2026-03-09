@@ -1,41 +1,12 @@
-version: '3.8'
 services:
   portfolio:
     image: ghcr.io/spitzerl/portfolio:latest
     container_name: portfolio
     restart: unless-stopped
-
-    environment:
-      - NODE_ENV=production
-      - PORT=3000
-      - NEXT_TELEMETRY_DISABLED=1
-
+    expose:
+      - "80"
     networks:
       - nginx-proxy-manager_web_network
-
-    expose:
-      - "3000"
-
-    healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 512M
-        reservations:
-          cpus: '0.25'
-          memory: 256M
-
-    labels:
-      - "com.docker.compose.project=portfolio"
-      - "maintainer=Lucas Spitzer"
-      - "description=Portfolio personnel Next.js"
 
 networks:
   nginx-proxy-manager_web_network:
