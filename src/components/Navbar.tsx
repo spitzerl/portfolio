@@ -52,7 +52,7 @@ export function Navbar() {
     { id: "education", label: "Formation" },
     { id: "experience", label: "Expérience" },
     { id: "projects", label: "Projets" },
-    { id: "contact", label: "Contact" }
+    // { id: "contact", label: "Contact" }
   ]
 
   return (

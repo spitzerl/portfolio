@@ -142,7 +142,7 @@ export function Projects() {
                             {project.pinned && <Pin className="w-3 h-3 text-primary" />}
                           </div>
                           <p className="text-xs text-muted-foreground">
-                            {project.year} - {project.type}
+                            {project.year} • {project.type}
                           </p>
                         </div>
                       </div>
