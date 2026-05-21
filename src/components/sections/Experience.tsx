@@ -77,7 +77,12 @@ export function Experience() {
                       className="w-fit mt-2"
                       asChild
                     >
-                      <a href={exp.reportLink} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={exp.reportLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Télécharger le rapport de stage de ${exp.title} chez ${exp.company}`}
+                      >
                         <Download className="w-4 h-4 mr-2" />
                         Télécharger le rapport
                       </a>
