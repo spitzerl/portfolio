@@ -157,6 +157,7 @@ export function Projects() {
                             href={project.liveLink}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`Voir le site en direct pour le projet ${project.title}`}
                           >
                             Voir le site
                           </a>
@@ -174,6 +175,7 @@ export function Projects() {
                             href={project.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`Voir le dépôt GitHub du projet ${project.title}`}
                           >
                             GitHub
                           </a>
@@ -227,6 +229,7 @@ export function Projects() {
                           href={project.liveLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Voir le site en direct du projet ${project.title}`}
                         >
                           Voir le site
                         </a>
@@ -243,6 +246,7 @@ export function Projects() {
                           href={project.githubLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Voir le code source du projet ${project.title} sur GitHub`}
                         >
                           GitHub
                         </a>
