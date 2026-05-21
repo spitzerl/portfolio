@@ -42,7 +42,8 @@ export default function RootLayout({
     ],
     "sameAs": [
       "https://github.com/spitzerl",
-      "https://www.linkedin.com/in/lucasspitzer/"
+      "https://www.linkedin.com/in/lucasspitzer/",
+      "https://jobingo.lucasspitzer.fr"
     ]
   };
 
