@@ -1,14 +1,19 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Lucas Spitzer | Portfolio",
-  description: "Portfolio de Lucas Spitzer",
-  keywords: "étudiant Bachelor DevOps, EPSI Montpellier, Bachelor SIN, DevOps Full Stack, développeur web, React, TypeScript, PHP, Docker, portfolio étudiant, développeur, Montpellier, formation développement web, infrastructure, BTS SIO SLAM diplômé",
+  metadataBase: new URL("https://lucasspitzer.fr"),
+  title: "Lucas Spitzer | Portfolio - Développeur Full Stack & DevOps",
+  description: "Découvrez le portfolio de Lucas Spitzer, étudiant en DevOps et développeur Full Stack à Montpellier. Explorez mes projets web (React, PHP) et DevOps (Docker, CI/CD).",
+  keywords: "Lucas Spitzer, DevOps, Développeur Full Stack, Montpellier, alternance DevOps, EPSI Montpellier, React, TypeScript, PHP, Docker, CI/CD, BTS SIO SLAM, portfolio informatique",
   authors: [{ name: "Lucas Spitzer" }],
   creator: "Lucas Spitzer",
   publisher: "Lucas Spitzer",
   icons: {
     icon: '/favicon.ico',
+    apple: '/my-notion-face-portrait.png',
+  },
+  alternates: {
+    canonical: "/",
   },
   formatDetection: {
     email: false,
@@ -16,11 +21,26 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Lucas Spitzer | Portfolio",
-    description: "Portfolio de Lucas Spitzer",
+    title: "Lucas Spitzer | Portfolio - Développeur Full Stack & DevOps",
+    description: "Découvrez le portfolio de Lucas Spitzer, étudiant en DevOps et développeur Full Stack à Montpellier. Explorez mes projets web et DevOps.",
+    url: "https://lucasspitzer.fr",
     type: "website",
     locale: "fr_FR",
     siteName: "Lucas Spitzer | Portfolio",
+    images: [
+      {
+        url: "/my-notion-face-portrait.png",
+        width: 800,
+        height: 800,
+        alt: "Lucas Spitzer - Développeur Full Stack & DevOps",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lucas Spitzer | Portfolio - Développeur Full Stack & DevOps",
+    description: "Découvrez le portfolio de Lucas Spitzer, étudiant en DevOps et développeur Full Stack à Montpellier.",
+    images: ["/my-notion-face-portrait.png"],
   },
   other: {
     "github-profile": "https://github.com/spitzerl",
