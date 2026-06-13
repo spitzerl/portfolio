@@ -15,6 +15,17 @@ import {
 
 const projects = [
   {
+    title: "Jobingo",
+    description: "Plateforme de suivi de la recherche d'emploi/alternance.",
+    technologies: ["React", "Node.js", "Express", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    liveLink: "https://jobingo.lucasspitzer.fr",
+    githubLink: "https://github.com/spitzerl/jobingo-frontend",
+    year: "2026",
+    type: "Personnel",
+    pinned: true,
+    image: ""
+  },
+  {
     title: "Portfolio V2",
     description: "Portfolio présentant mes compétences et mes projets.",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI", "Vercel"],
