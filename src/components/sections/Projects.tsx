@@ -26,6 +26,17 @@ const projects = [
     image: ""
   },
   {
+    title: "SchoolBlock",
+    description: "Extension pour bloquer les publicités des écoles sur les sites de recherche d'emploi.",
+    technologies: ["React", "TypeScript", "Plasmo"],
+    liveLink: "",
+    githubLink: "https://github.com/spitzerl/school-block",
+    year: "2026",
+    type: "Personnel",
+    pinned: true,
+    image: ""
+  },
+  {
     title: "Portfolio V2",
     description: "Portfolio présentant mes compétences et mes projets.",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI", "Vercel"],
