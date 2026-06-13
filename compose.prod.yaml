@@ -1,0 +1,18 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: portfolio:local
+    container_name: portfolio
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+    expose:
+      - "80"
+    networks:
+      - nginx-proxy-manager_web_network
+
+networks:
+  nginx-proxy-manager_web_network:
+    external: true
