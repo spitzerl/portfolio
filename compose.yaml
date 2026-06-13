@@ -6,8 +6,8 @@ services:
     expose:
       - "80"
     networks:
-      - nginx-proxy-manager_web_network
+      - proxy
 
 networks:
-  nginx-proxy-manager_web_network:
+  proxy:
     external: true
